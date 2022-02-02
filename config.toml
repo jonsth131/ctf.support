@@ -1,0 +1,54 @@
+baseURL = "https://ctf.support"
+title = "CTF Support"
+theme = "hugo-geekdoc"
+
+# Required to get well formatted code blocks
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+disablePathToLower = true
+enableGitInfo = true
+
+# Required if you want to render robots.txt template
+enableRobotsTXT = true
+
+[markup]
+  [markup.goldmark.renderer]
+    # Needed for mermaid shortcode
+    unsafe = true
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 9
+
+[taxonomies]
+  tag = "tags"
+
+[params]
+  # (Optional, default false) Collapse all menu entries, can not be overwritten
+  # per page if enabled. Can be enabled per page via `geekdocCollapseSection`.
+  geekdocCollapseAllSections = false
+
+  # (Optional, default true) Show page navigation links at the bottom of each
+  # docs page (bundle menu only).
+  geekdocNextPrev = false
+
+  # (Optional, default none) Set source repository location. Used for 'Edit page' links.
+  # You can also specify this parameter per page in front matter.
+  geekdocRepo = "https://github.com/jonsth131/ctf.support"
+
+  # (Optional, default none) Enable 'Edit page' links. Requires 'GeekdocRepo' param
+  # and path must point to 'content' directory of repo.
+  # You can also specify this parameter per page in front matter.
+  geekdocEditPath = "edit/main/content"
+
+  # (Optional, default false) Set HTMl <base> to .Site.BaseURL if enabled. It might be required
+  # if a subdirectory is used within Hugos BaseURL.
+  # See https://developer.mozilla.org/de/docs/Web/HTML/Element/base.
+  geekdocOverwriteHTMLBase = false
+
+  # (Optional, default true) Display a "Back to top" link in the site footer.
+  geekdocBackToTop = true
+
+  # (Optional, default 'title') Configure how to sort file-tree menu entries. Possible options are 'title', 'linktitle',
+  # 'date', 'publishdate', 'expirydate' or 'lastmod'. Every option can be used with a reverse modifier as well
+  # e.g. 'title_reverse'.
+  geekdocFileTreeSortBy = "title"
