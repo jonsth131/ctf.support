@@ -13,7 +13,7 @@ doc-assets:
 
 .PHONY: doc-build
 doc-build:
-        cd $(BASEDIR); hugo
+    cd $(BASEDIR); hugo
 
 .PHONY: clean
 clean:
