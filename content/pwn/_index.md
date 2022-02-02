@@ -1,5 +1,5 @@
 ---
-title: Rev/Pwn
+title: Pwn
 ---
 
 {{< toc-tree >}}
