@@ -1,5 +1,5 @@
 ---
-title: Tools
+title: Disassemblers
 ---
 
 ## Ghidra
