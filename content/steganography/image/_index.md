@@ -1,6 +1,14 @@
 ---
 title: Image
+resources:
+  - name: stegsolve-normal
+    src: "stegsolve-1.png"
+    title: Normal Image
+  - name: stegsolve-revealed
+    src: "stegsolve-2.png"
+    title: Revealed Flag
 ---
+
 ## Resources
 [https://aperisolve.fr/](https://aperisolve.fr/)
 
@@ -11,9 +19,18 @@ title: Image
 [https://stylesuxx.github.io/steganography/](https://stylesuxx.github.io/steganography/)
 
 ## zsteg
-`zsteg -a` to check all.
+To use **zteg** run `zteg <filename>`.
 
-`zsteg -E b8,rgb,lsb,xy` show specific
+To check all bytes run `zteg -a <filename>`.
+
+To show specific bytes run `zteg -E b8,rgb,lsb,xy <filename>`.
 
 ## steghide
 `steghide`
+
+## Stegsolve
+[Stegsolve](http://www.caesum.com/handbook/Stegsolve.jar) is used to solve steganography challenges. It can be used to view different bit planes, extract data from bit planes.
+
+{{< img name="stegsolve-normal" size="small" >}}
+
+{{< img name="stegsolve-revealed" size="small" >}}

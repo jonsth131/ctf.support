@@ -32,4 +32,8 @@ print(bytes.fromhex(hex(m)[2:]).decode('utf-8'))
 ```
 
 ## RsaCtfTool
-[RsaCtfTool](https://github.com/Ganapati/RsaCtfTool)
+RsaCtfTool is able to run a wide range of attacks on RSA ciphers.
+
+More information on the attacks and installation instructions can be found on the GitHub page.
+
+[RsaCtfTool GitHub](https://github.com/Ganapati/RsaCtfTool)
