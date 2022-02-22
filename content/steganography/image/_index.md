@@ -19,6 +19,13 @@ resources:
 [https://stylesuxx.github.io/steganography/](https://stylesuxx.github.io/steganography/)
 
 ## zsteg
+Extract data from BMP and PNG images.
+
+Installation:
+``` text
+gem install zsteg
+```
+
 To use **zteg** run `zteg <filename>`.
 
 To check all bytes run `zteg -a <filename>`.
