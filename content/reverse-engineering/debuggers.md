@@ -3,9 +3,16 @@ title: Debuggers
 ---
 
 ## gdb
-The GNU Debugger is used to debug *NIX applications.
+The GNU Debugger is used to debug \*NIX applications.
 
 Installation on debian based systems `apt install gdb`
+
+### Usage
+To attach *gdb* to a running process, the following command can be used.
+
+``` text
+gdb -p `pidof <name of program>`
+```
 
 ### pwndbg
 To make gdb more usable, [pwndbg](https://github.com/pwndbg/pwndbg) can be used.
