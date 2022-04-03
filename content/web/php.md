@@ -31,7 +31,7 @@ if (isset($_GET['input1']) and isset($_GET['input2'])) {
   } else if (hash("sha256", $_GET['input1']) === hash("sha256", $_GET['input2'])) {
     print 'flag';
   } else {
-    print 'Inputs don\'t match!';
+    print 'Inputs can\'t match!';
   }
 }
 ```
