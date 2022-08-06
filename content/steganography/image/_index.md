@@ -36,7 +36,7 @@ To show specific bytes run `zteg -E b8,rgb,lsb,xy <filename>`.
 `steghide`
 
 ## Stegsolve
-[Stegsolve](http://www.caesum.com/handbook/Stegsolve.jar) is used to solve steganography challenges. It can be used to view different bit planes, extract data from bit planes.
+[Stegsolve](http://www.caesum.com/handbook/Stegsolve.jar) is used to solve steganography challenges. It can be used to view different bit planes, and extract data from bit planes.
 
 {{< img name="stegsolve-normal" size="small" >}}
 

@@ -4,7 +4,7 @@ Title: Shellcode
 
 ## Pwntools
 
-Pwntools can be used to generate shellcode. The following example generates x64 shellcode for linux to execute `sh`.
+Pwntools can be used to generate shellcode. The following example generates x64 shellcode for Linux to execute `sh`.
 
 ``` python
 from pwnlib import *

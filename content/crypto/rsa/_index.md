@@ -10,7 +10,7 @@ To factor n, the following websites can be used.
 [Integer factorization calculator](https://www.alpertron.com.ar/ECM.HTM)
 
 ## Known p and q
-If p and q is known, either by factoring n or that they are given, the following Python script can decrypt the ciphertext.
+If p and q are known, either by factoring n or that they are given, the following Python script can decrypt the ciphertext.
 
 ``` python
 #!/usr/bin/env python3
@@ -32,7 +32,7 @@ print(bytes.fromhex(hex(m)[2:]).decode('utf-8'))
 ```
 
 ## RsaCtfTool
-RsaCtfTool is able to run a wide range of attacks on RSA ciphers.
+RsaCtfTool can run a wide range of attacks on RSA ciphers.
 
 More information on the attacks and installation instructions can be found on the GitHub page.
 

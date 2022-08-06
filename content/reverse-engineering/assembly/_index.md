@@ -11,7 +11,7 @@ resources:
 
 ## Compiler Explorer
 
-[Compiler Explorer](https://godbolt.org) is a tool to compile a vide range of languages and check the output.
+[Compiler Explorer](https://godbolt.org) is a tool to compile a wide range of languages and check the output.
 
 {{< img name="compiler-explorer-input" size="medium" >}}
 
