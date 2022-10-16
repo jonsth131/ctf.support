@@ -9,6 +9,9 @@ To factor n, the following websites can be used.
 
 [Integer factorization calculator](https://www.alpertron.com.ar/ECM.HTM)
 
+## RSA Calculator
+To generate RSA keys and encrypt/decrypt data, [RSA calculator](https://www.tausquared.net/pages/ctf/rsa.html) can be used.
+
 ## Known p and q
 If p and q are known, either by factoring n or that they are given, the following Python script can decrypt the ciphertext.
 
