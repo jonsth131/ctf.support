@@ -9,6 +9,9 @@ To return the base64 of a file, like the source code of a page, `php://filter` c
 
 `view.php?page=php://filter/convert.base64-encode/resource=index.php`
 
+#### Adding data to output using filter
+[Tool](https://github.com/wupco/PHP_INCLUDE_TO_SHELL_CHAR_DICT)
+
 ## Type Juggling
 ### strcmp
 If `strcmp` is used like this
