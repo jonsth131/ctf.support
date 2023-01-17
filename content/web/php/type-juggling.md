@@ -1,19 +1,8 @@
 ---
-title: PHP
+title: Type Juggling
 ---
 
-## LFI
-
-### php://filter
-To return the base64 of a file, like the source code of a page, `php://filter` can be used like this:
-
-`view.php?page=php://filter/convert.base64-encode/resource=index.php`
-
-#### Adding data to output using filter
-[Tool](https://github.com/wupco/PHP_INCLUDE_TO_SHELL_CHAR_DICT)
-
-## Type Juggling
-### strcmp
+## strcmp
 If `strcmp` is used like this
 
 ```php
@@ -26,7 +15,7 @@ if (strcmp($_POST["pass"], $flag) == 0) {
 
 It's vulnerable to type juggling. Changing the `pass` parameter to an array like `pass[]=1` will execute the `true` block.
 
-### Different inputs, matching hashes
+## Different inputs, matching hashes
 ``` php
 if (isset($_GET['input1']) and isset($_GET['input2'])) {
   if ($_GET['input1'] == $_GET['input2']) {
