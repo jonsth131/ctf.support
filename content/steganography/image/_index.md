@@ -33,7 +33,13 @@ To check all bytes run `zteg -a <filename>`.
 To show specific bytes run `zteg -E b8,rgb,lsb,xy <filename>`.
 
 ## steghide
-`steghide`
+`steghide extract -sf <image-file>`
+
+## stegseek
+Stegseek is used to crack `steghide` passwords.
+
+Usage with wordlist:
+`stegseek -sf <image-file> -wl rockyou.txt`
 
 ## Stegsolve
 [Stegsolve](http://www.caesum.com/handbook/Stegsolve.jar) is used to solve steganography challenges. It can be used to view different bit planes, and extract data from bit planes.
