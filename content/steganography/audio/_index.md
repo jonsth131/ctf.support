@@ -12,3 +12,10 @@ Using either Audacity or Sonic Visualiser to show the spectrogram view of the au
 
 ## Morse signals
 To decode morse signals, this [decoder](https://morsecode.world/international/decoder/audio-decoder-adaptive.html) can be used.
+
+## LSB
+LSB steganography for wave-files can be decoded using the [stegolsb](https://github.com/ragibson/Steganography) tools.
+
+The following command will extract 100 bytes from the input file.
+
+`stegolsb wavsteg -i <input-file> -o output.txt -b 100`
