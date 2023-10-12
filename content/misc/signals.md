@@ -2,6 +2,9 @@
 title: Signals
 ---
 
+## Identifying signals
+To identify unknown signals, [SigidWiki](https://www.sigidwiki.com/wiki/Signal_Identification_Guide) is a good starting point.
+
 ## SSTV 
 Slow Scan TV is used to send images over radio signals.
 
