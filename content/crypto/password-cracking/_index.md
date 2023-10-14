@@ -34,5 +34,5 @@ If we want to use **Hashcat** we first need to delete the first identifier of th
 `john -wordlist=<wordlist> <hash>`
 {{< /tab >}}
 {{< tab "Hashcat" >}}
-`hashcat -a 0 -m 13400 <worlist> <hash>`
+`hashcat -a 0 -m 13400 <wordlist> <hash>`
 {{< /tab >}}
