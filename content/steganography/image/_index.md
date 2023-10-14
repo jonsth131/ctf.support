@@ -41,6 +41,9 @@ Stegseek is used to crack `steghide` passwords.
 Usage with wordlist:
 `stegseek -sf <image-file> -wl rockyou.txt`
 
+## iSteg
+[iSteg](https://github.com/rafiibrahim8/iSteg) is a image LSB steganography tool that exists in a CLI and a GUI version.
+
 ## Stegsolve
 [Stegsolve](http://www.caesum.com/handbook/Stegsolve.jar) is used to solve steganography challenges. It can be used to view different bit planes, and extract data from bit planes.
 
