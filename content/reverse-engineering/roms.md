@@ -12,3 +12,10 @@ Title: Roms
 ### Disassemble
 First unpack the bin-files using an unpacker.
 Open **arm9.bin** in Ghidra, choose ARM v5i and set base address to **0200000**.
+
+## Atari 2600
+### Emulators
+- [Stella](https://stella-emu.github.io/)
+
+### Disassemble
+- [DiStella](https://github.com/johnkharvey/distella)
