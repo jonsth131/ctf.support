@@ -2,6 +2,9 @@
 title: Esoteric Programming Languages
 ---
 
+## General
+[esolangs.org](https://esolangs.org/wiki/Main_Page) is a wiki for esoteric programming languages that contain a lot of information on many different esolangs.
+
 ## Malbolge
 [Malbolge](https://en.wikipedia.org/wiki/Malbolge) is a programming language created with the goal to be the hardest programming language in the world.
 
