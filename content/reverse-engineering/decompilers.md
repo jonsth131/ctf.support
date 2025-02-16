@@ -25,3 +25,6 @@ To decompile compiled Python applications, either of the following tools can be 
 For later Python versions unsupported by previous tools, [Decompyle++](https://github.com/zrax/pycdc) can be used.
 
 To extract bundled executables built by PyInstaller, [pyinstxtractor](https://github.com/extremecoders-re/pyinstxtractor) can be used.
+
+## Flash
+To decompile Flash applications, [JPEXS Decompiler](https://github.com/jindrapetrik/jpexs-decompiler) can be used.
