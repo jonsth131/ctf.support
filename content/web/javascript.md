@@ -2,6 +2,8 @@
 title: JavaScript
 ---
 
+{{< toc >}}
+
 ## Obfuscation
 Multiple obfuscation techniques can be deobfuscated using [de4js](https://lelinhtinh.github.io/de4js/).
 
@@ -21,3 +23,21 @@ node_modules/ion-parser
 ```
 
 Other tools like [Snyk CLI](https://github.com/snyk/cli) can be used to achieve the same results.
+
+## Prototype Pollution
+Prototype pollution is a vulnerability that allows an attacker to modify the prototype of an object and potentially execute arbitrary code.
+
+For example, consider the following code:
+
+```javascript
+const merge = require('deepmerge');
+
+let obj = {};
+let payload = '{"__proto__": {"polluted": true}}';
+
+let result = merge(obj, JSON.parse(payload));
+
+console.log(obj.polluted); // true
+```
+
+In this example, the `merge` function merges the `obj` object with the `payload` object. The `payload` object has a property `__proto__` that modifies the prototype of the `obj` object. As a result, the `obj` object now has a `polluted` property.
