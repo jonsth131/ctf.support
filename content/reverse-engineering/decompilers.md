@@ -6,8 +6,10 @@ title: Decompilers
 To decompile .NET applications, either of the following tools can be used.
 
 - [ILSpy](https://github.com/icsharpcode/ILSpy)
+- [AvaloniaILSpy](https://github.com/icsharpcode/AvaloniaILSpy)
 - [dotPeek](https://www.jetbrains.com/decompiler/)
 - [dnSpy](https://github.com/dnSpy/dnSpy)
+- [dnSpyEx](https://github.com/dnSpyEx/dnSpy)
 
 ## Java
 To decompile Java applications, either of the following tools can be used.
