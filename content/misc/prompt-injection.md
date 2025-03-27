@@ -22,3 +22,4 @@ Prompt injection is a type of attack against AI models, particularly large langu
 # Resources
 
 - [Prompt Injection](https://learnprompting.org/docs/prompt_hacking/injection)
+- [Gandalf](https://gandalf.lakera.ai/intro) - Game to learn about prompt hacking
