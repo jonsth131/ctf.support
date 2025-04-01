@@ -8,7 +8,7 @@ To identify unknown signals, [SigidWiki](https://www.sigidwiki.com/wiki/Signal_I
 ## Decoding Signals
 There are several tools available to decode signals, some of them are listed below.
 
-- [fldigi](https://www.w1hkj.com/), a software suite for amateur radio.
+- [fldigi](https://www.w1hkj.org/), a software suite for amateur radio.
 - [DigiPan](https://bpsk31.com/apps/) is a free program to decode PSk31/PSK63 signals.
 
 ## SSTV 
