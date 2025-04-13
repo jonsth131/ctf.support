@@ -14,6 +14,8 @@ To crack a zip file using a wordlist, the following command can be used.
 
 Another way to crack a password protected zip file is to use **zip2john** to extract the hash and then using **John the Ripper** to crack the hash.
 
+If the zip file is encrypted using legacy zip encryption, [bkcrack](https://github.com/kimci86/bkcrack) can be used to crack the password.
+
 ## PDF files
 To crack password protected PDF files, **pdf2john** can be used to extract the hash.
 
