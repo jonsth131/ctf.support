@@ -5,7 +5,7 @@ title: JavaScript
 {{< toc >}}
 
 ## Obfuscation
-Multiple obfuscation techniques can be deobfuscated using [de4js](https://lelinhtinh.github.io/de4js/).
+Multiple obfuscation techniques can be deobfuscated using [de4js](https://lelinhtinh.github.io/de4js/), or [JavaScript Deobfuscator](https://deobfuscate.io/).
 
 Deobfuscating [Obfuscator.io](https://obfuscator.io/) can be done using [Obfuscator.io Deobfuscator](https://obf-io.deobfuscate.io/).
 
