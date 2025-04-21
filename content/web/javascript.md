@@ -7,6 +7,8 @@ title: JavaScript
 ## Obfuscation
 Multiple obfuscation techniques can be deobfuscated using [de4js](https://lelinhtinh.github.io/de4js/).
 
+Deobfuscating [Obfuscator.io](https://obfuscator.io/) can be done using [Obfuscator.io Deobfuscator](https://obf-io.deobfuscate.io/).
+
 ## Vulnerable Packages
 If there's access to `package-lock.json`, a check for vulnerable packages can be done by running the command `npm audit` in the same directory as `package-lock.json`.
 
