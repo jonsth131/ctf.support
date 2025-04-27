@@ -9,3 +9,6 @@ To extract information from Firefox profiles, [dumpzilla](https://github.com/Bus
 
 ## Thumbcache
 To extract and view images from thumbcache files, [Thumcacheviewer](https://thumbcacheviewer.github.io/) can be used.
+
+## RDP Bitmap Cache
+To extract bitmaps from `bcache*.bmc` and `cache????.bin` files, [BMC-Tools](https://github.com/ANSSI-FR/bmc-tools) can be used.
