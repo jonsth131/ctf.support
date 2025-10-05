@@ -18,8 +18,6 @@ They usually focus on code obfuscation or minimal instruction sets.
 
 ## General Resources
 
-General Resources
-
 | Resource                                             | Description                                       |
 |------------------------------------------------------|---------------------------------------------------|
 | [Esolangs Wiki](https://esolangs.org/wiki/Main_Page) | Comprehensive index of esoteric languages.        |
