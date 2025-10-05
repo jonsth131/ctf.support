@@ -39,7 +39,7 @@ This page outlines the most common techniques and tools used to detect and extra
 
 - Reveal hidden LSB content or embedded files: `zsteg -a image.png`
 - Extract data hidden with `steghide`: `steghide extract -sf image.jpg`
-- Crack steghide password: `stegseek -sf image.jpg -wl rockyou.txt`
+- Crack `steghide` password: `stegseek -sf image.jpg -wl rockyou.txt`
 - Visualize bit planes manually: `java -jar Stegsolve.jar`
 
 ## Tools

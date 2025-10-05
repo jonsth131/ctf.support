@@ -52,8 +52,8 @@ In many cases, the flag will appear as text or a visible structure in the spectr
 
 Method 1: Audacity
 
-1. Open the audio file (File → Open).
-2. Click on the track name → Spectrogram View.
+1. Open the audio file (File -> Open).
+2. Click on the track name -> Spectrogram View.
 3. Adjust the scale via Spectrogram Settings for better contrast.
 4. Look for visible text, patterns, or QR codes.
 
@@ -61,7 +61,7 @@ Method 1: Audacity
 
 Method 2: Sonic Visualiser
 
-1. Open file and select Layer → Add Spectrogram.
+1. Open file and select Layer -> Add Spectrogram.
 2. Use color maps to enhance visual clarity.
 3. Export frame regions if required.
 
