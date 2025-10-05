@@ -47,15 +47,11 @@ In CTFs, memory dumps are often provided as challenges to extract hidden data or
 
 ### Identify Profile (OS)
 
-Windows:
-
 ```bash
+# Windows
 vol -f memory_dump.raw windows.info
-```
 
-Linux:
-
-```bash
+# Linux
 vol -f memory_dump.raw banner
 ```
 
@@ -110,17 +106,15 @@ List plugins:
 vol --help
 ```
 
-List running processes (Windows):
+List running processes:
 
 ```bash
+# Windows
 vol -f memory_dump.raw windows.pslist
 vol -f memory_dump.raw windows.psscan
 vol -f memory_dump.raw windows.pstree
-```
 
-List running processes (Linux):
-
-```bash
+# Linux
 vol -f memory_dump.raw linux.pslist
 vol -f memory_dump.raw linux.psscan
 vol -f memory_dump.raw linux.pstree
