@@ -95,6 +95,10 @@ Example: Extract DNS query names
 tshark -r capture.pcap -T fields -e dns.qry.name
 ```
 
+### Exporting Files
+
+Extract HTTP files using Wireshark: `File -> Export Objects -> HTTP`
+
 ### Analyze USB HID Data
 
 Sometimes the challenge is to make sense of captured USB Human Interface Device (HID) data, such as USB keyboard and mouse captures.

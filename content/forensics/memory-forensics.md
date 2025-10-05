@@ -75,7 +75,7 @@ Offset  Banner
 
 After identifying the Linux kernel version, a symbol file needs to be created. To create a correct symbol file for the current memory dump a debug version for the correct kernel is needed.
 
-For example, using the information from the `banner` output in the previous section, the identified kernel is `5.10.0-35-amd64` from a Debian distro. Debian has an archive of older packages in the [debian-security](https://snapshot.debian.org/archive/debian-security/20250520T200947Z/pool/updates/main/l/linux/) repository. The kernel files needed is the `dbg` version of the kernel, in this case `linux-image-5.10.0-35-amd64-dbg_5.10.237-1_amd64.deb`.
+For example, using the information from the `banner` output in the previous section, the identified kernel is `5.10.0-35-amd64` from a Debian distro. Debian has an archive of older packages in the [debian-security](https://snapshot.debian.org/archive/debian-security/20250520T200947Z/pool/updates/main/l/linux/) repository. The kernel files needed are the `dbg` version of the kernel, in this case `linux-image-5.10.0-35-amd64-dbg_5.10.237-1_amd64.deb`.
 
 After downloading the debug version of the kernel, extract it by using:
 

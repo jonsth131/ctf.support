@@ -70,6 +70,10 @@ Inspect their contents using standard tools:
 unzip sample.docx -d output/
 ```
 
+```bash
+7z x sample.docx
+```
+
 Look inside the extracted directories for:
 
 - `word/document.xml` — contains the main text

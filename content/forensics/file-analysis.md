@@ -135,6 +135,12 @@ Human-readable text might contain hints or embedded flags.
 strings mystery_file | less
 ```
 
+For Unicode strings (common in Windows):
+
+```bash
+strings -el mystery_file | less
+```
+
 Look for:
 
 - URLs

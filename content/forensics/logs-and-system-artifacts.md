@@ -47,6 +47,8 @@ Windows Event Logs contain system, security, and application records. Common use
 - **Application**: program execution, errors
 - **PowerShell**: powershell commands and scriptblocks
 
+Windows Event Logs are commonly found in `C:\Windows\System32\winevt\Logs\`.
+
 Common Event IDs:
 
 - 4624 – Successful logon
