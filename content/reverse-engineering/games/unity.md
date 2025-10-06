@@ -32,7 +32,7 @@ Flags or credentials often appear in embedded scripts, asset bundles, or metadat
 | [Cpp2IL](https://github.com/SamboyCoding/Cpp2IL)                      | Recreates readable C# from compiled C++ code            |
 | [AssetRipper](https://github.com/AssetRipper/AssetRipper)             | Extracts Unity assets/resources from projects or builds |
 | [Unity Assets Bundle Extractor](https://github.com/SeriousCache/UABE) | Legacy asset editor for Unity bundles                   |
-| [MelonLoader](https://melonloader.net/)                               | Loads plugins for runtime inspection                    |
+| [MelonLoader](https://melonloader.co/)                                | Loads plugins for runtime inspection                    |
 | [BepInEx](https://github.com/BepInEx/BepInEx)                         | Plugin injector and modding framework                   |
 | [UnityExplorer](https://github.com/sinai-dev/UnityExplorer)           | Runtime object explorer for managed Unity assemblies    |
 
