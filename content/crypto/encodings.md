@@ -75,7 +75,5 @@ echo "<string>" | base64 -d | xxd -p -r
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------|
 | [CyberChef](https://gchq.github.io/CyberChef/)                                                    | Universal encode/decode platform (Magic auto‑detect) |
 | [Better‑Converter Base65536](https://www.better-converter.com/Encoders-Decoders/Base65536-Decode) | Base65536 encoder and decoder                        |
-| [`xxd`](https://linux.die.net/man/1/xxd)                                                          | Hex dump ↔ Binary converter                          |
-| [`iconv`](https://linux.die.net/man/1/iconv)                                                      | Change text encodings (UTF‑16 ↔ UTF‑8)               |
-
----
+| [`xxd`](https://linux.die.net/man/1/xxd)                                                          | Hex dump <> Binary converter                          |
+| [`iconv`](https://linux.die.net/man/1/iconv)                                                      | Change text encodings (UTF‑16 <> UTF‑8)               |
