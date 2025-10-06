@@ -1,45 +1,42 @@
 ---
-title: Debuggers
+title: "Debuggers"
+description: "Use debuggers to trace execution, inspect memory, and patch binaries in CTF reverse engineering and exploitation challenges."
+date: 2025-10-06
+draft: false
+categories: ["Reverse Engineering"]
+tags: ["debugging", "gdb", "x64dbg", "radare2", "pwndbg", "ollydbg"]
+authors: ["CTF.Support Team"]
+summary: "Learn to use popular debuggers like GDB, Pwndbg, x64dbg, and Radare2 for analyzing and modifying program execution in real time."
+aliases: ["/reverse/debuggers/"]
+slug: "debuggers"
+toc: true
 ---
 
-## gdb
-The GNU Debugger is used to debug \*NIX applications.
+## Introduction
 
-Installation on Debian based systems `apt install gdb`
+Debuggers are essential tools for analyzing program execution, inspecting memory, and understanding runtime logic.  
+In CTF reversing or exploitation tasks, they reveal hidden logic paths, encryption routines, or validation functions and are vital for dynamic analysis.
 
-### Usage
-To attach *gdb* to a running process, the following command can be used.
+## Quick Reference
 
-``` text
-gdb -p `pidof <name of program>`
-```
+- Attach GDB to a process: `gdb -p $(pidof <program>)`
+- Launch binary in GDB: `gdb ./binary`
+- Radare2 debug mode: `r2 -d ./binary`
+- x64dbg Windows GUI debugger: `File -> Open -> Run`
 
-### pwndbg
-To make gdb more usable, [pwndbg](https://github.com/pwndbg/pwndbg) can be used.
+## Tools
 
-To install pwndbg run the following.
+| Tool                                                                | Purpose                                                            |
+|---------------------------------------------------------------------|--------------------------------------------------------------------|
+| [GDB](https://www.gnu.org/software/gdb/)                            | Standard Linux debugger for low-level program inspection           |
+| [Pwndbg](https://github.com/pwndbg/pwndbg)                          | GDB plugin with enhanced UI and exploitation-focused features      |
+| [Radare2](https://rada.re)                                          | Open-source reverse engineering framework with integrated debugger |
+| [x64dbg](https://x64dbg.com/)                                       | GUI debugger for Windows (32 / 64 bit)                             |
+| [Immunity Debugger](https://www.immunityinc.com/products/debugger/) | Scriptable Windows debugger with Python support                    |
+| [OllyDbg](http://www.ollydbg.de/)                                   | Classic 32-bit Windows debugger for inline patching and analysis   |
 
-``` text
-git clone https://github.com/pwndbg/pwndbg
-cd pwndbg
-./setup.sh
-```
+## Tips
 
-## radare2
-[Radare2](https://rada.re/) is a free re toolchain.
-
-To install radare2, run the following.
-
-``` text
-git clone https://github.com/radareorg/radare2
-cd radare2 ; sys/install.sh
-```
-
-## x64dbg
-[x64dbg](https://x64dbg.com/) is an open-source x64/x32 debugger for Windows.
-
-## Immunity Debugger
-[Immunity Debugger](https://www.immunityinc.com/products/debugger/) is a Windows debugger.
-
-## OllyDbg
-[OllyDbg](http://www.ollydbg.de/) is a 32bit Windows debugger.
+- Use **breakpoints** before key functions (like `strcmp`, `recv`, `decrypt`) to observe intermediate values.  
+- Combine static and dynamic analysis, inspect the binary structure in a disassembler before stepping through execution.  
+- Use **Pwndbg** or **GEF** extensions with GDB to enhance usability during CTF reversing tasks.

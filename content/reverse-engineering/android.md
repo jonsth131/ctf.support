@@ -1,21 +1,45 @@
 ---
-Title: Android
+title: "Android"
+description: "Reverse engineer Android applications by unpacking, decompiling, and analyzing APK or AAB packages for secrets, code, and embedded data."
+date: 2025-10-06
+draft: false
+categories: ["Reverse Engineering"]
+tags: ["android", "apk", "aab", "jadx", "apktool", "bundletool", "ctf"]
+authors: ["CTF.Support Team"]
+summary: "Learn to reverse engineer Android apps using Apktool, JADX, and Bundletool to reveal hidden logic and resources in APK or AAB files."
+aliases: ["/reverse/android/"]
+slug: "android"
+toc: true
 ---
 
-## APK 
-APK (Android Package) files are the standard format for applications used on the Android platform.
+## Introduction
 
-[JADX](https://github.com/skylot/jadx) is a command line and GUI decompiler for Android Dex and Apk files.
+Android applications are distributed as either **APK** (Android Package) or **AAB** (Android App Bundle) files.  
+In CTF reverse engineering, analyzing these files can expose hardcoded keys, credential checks, or base64‑encoded secrets.
 
-[APKTool](https://ibotpeaches.github.io/Apktool/) is a tool for reverse engineering and modifying APK files.
+## Quick Reference
 
-## AAB
-AAB (Android App Bundle) is a more recent format that supports multiple APKs for different platforms, locales and screen sizes.
-
-To extract the APKs from an AAB file, [bundletool](https://developer.android.com/tools/bundletool) can be used.
+- Decompile APK: `jadx -d output/ sample.apk`
+- Decode resources & smali: `apktool d sample.apk -o output/`
+- Build smali back to APK: `apktool b output/ -o rebuilt.apk`
+- Extract APKs from AAB:  
 
 ```bash
-bundletool build-apks --bundle=/path/to/app.aab --output=/path/to/output.apks
+bundletool build-apks --bundle=app.aab --output=output.apks
+unzip output.apks -d extracted/
 ```
 
-To extract the APKs from the APKS file, use a tool like 7zip.
+## Tools
+
+| Tool                                                         | Purpose                                       |
+|--------------------------------------------------------------|-----------------------------------------------|
+| [JADX](https://github.com/skylot/jadx)                       | Decompile APK/Dex files to Java source        |
+| [APKTool](https://ibotpeaches.github.io/Apktool/)            | Decode resources, manifests, and rebuild APKs |
+| [bundletool](https://developer.android.com/tools/bundletool) | Unpack AAB bundles into individual APKs       |
+
+## Tips
+
+- Focus on code under `smali/com/.../MainActivity.smali` or equivalent Java packages for flag logic.
+- Inspect `AndroidManifest.xml` for exported components or permissions leakage.
+- Search compiled code (`grep`) for known variable names like *flag*, *api_key*, or *secret*.
+- Use **JADX** and **APKTool** together, **JADX** for readable code, **APKTool** for precise resource mapping.
