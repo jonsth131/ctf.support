@@ -25,6 +25,8 @@ In CTFs, network forensics challenges often contain:
 
 Goal: Extract flags, reconstruct sessions, and detect anomalies.
 
+---
+
 ## Quick Reference
 
 - Inspect PCAP: `tshark -r capture.pcap`
@@ -32,14 +34,20 @@ Goal: Extract flags, reconstruct sessions, and detect anomalies.
 - Extract DNS queries: `tshark -r capture.pcap -T fields -e dns.qry.name`
 - Filter by protocol: `tshark -r capture.pcap -Y "ftp or http"`
 
+---
+
 ## Tools
 
-| Tool                                    | Purpose                                            |
-|-----------------------------------------|----------------------------------------------------|
-| [Wireshark](https://www.wireshark.org/) | Graphical PCAP analysis, protocol dissection       |
-| `tshark`                                | Command-line Wireshark for scripting               |
-| `tcpdump`                               | Capture or filter traffic                          |
-| Scapy / Python                          | Parse, manipulate, or extract custom protocol data |
+| Tool                                                              | Purpose                                            |
+|-------------------------------------------------------------------|----------------------------------------------------|
+| [Wireshark](https://www.wireshark.org/)                           | Graphical PCAP analysis, protocol dissection       |
+| `tshark`                                                          | Command-line Wireshark for scripting               |
+| `tcpdump`                                                         | Capture or filter traffic                          |
+| `pcapfix` / [Online Utility](https://f00l.de/hacking/pcapfix.php) | Repair or reconstruct corrupted PCAP capture files |
+| [Crackle](https://github.com/mikeryan/crackle)                    | Crack Bluetooth Low Energy (BLE) encrypted traffic |
+| Scapy / Python                                                    | Parse, manipulate, or extract custom protocol data |
+
+---
 
 ## Step-by-Step Guide
 
@@ -63,6 +71,8 @@ Command-line alternative:
 tshark -r capture.pcap
 ```
 
+---
+
 ### Reconstruct Sessions
 
 Reconstruct streams to extract files or messages:
@@ -70,6 +80,8 @@ Reconstruct streams to extract files or messages:
 HTTP files: Follow -> TCP Stream -> Save as file
 
 FTP / SMTP transfers: follow streams to extract payloads
+
+---
 
 ### Search for Hidden Flags
 
@@ -79,6 +91,8 @@ Flags may be embedded in:
 - DNS queries (DNS tunneling)
 - Base64 or hex-encoded payloads
 - Unusual TCP/UDP payloads
+
+---
 
 ### Analyze Covert Channels
 
@@ -95,9 +109,40 @@ Example: Extract DNS query names
 tshark -r capture.pcap -T fields -e dns.qry.name
 ```
 
+---
+
 ### Exporting Files
 
 Extract HTTP files using Wireshark: `File -> Export Objects -> HTTP`
+
+---
+
+### Fix Broken Capture Files
+
+Sometimes challenge PCAPs are intentionally truncated or corrupted.  
+Use **pcapfix** to repair header and packet data:
+
+```bash
+pcapfix broken.pcap -o repaired.pcap
+```
+
+An online version is available: [https://f00l.de/hacking/pcapfix.php](https://f00l.de/hacking/pcapfix.php)
+
+---
+
+### Analyze Bluetooth Captures
+
+Bluetooth Low Energy (BLE) network captures may contain pairing or data exchange information.
+
+Use [Crackle](https://github.com/mikeryan/crackle) to crack BLE‑encrypted connections and recover encryption keys:
+
+```bash
+crackle -i ble_capture.pcap -o decrypted.pcap
+```
+
+You can then load **decrypted.pcap** in Wireshark for further analysis.
+
+---
 
 ### Analyze USB HID Data
 
@@ -107,9 +152,13 @@ The tool [USB Capture Decoder](https://github.com/jonsth131/ctf-tools/tree/main/
 
 Documentation for analyzing USB HID data can be found at [HID Usage Tables](https://www.usb.org/sites/default/files/hut1_21.pdf)
 
+---
+
 ## Tips
 
 - Always filter protocols to reduce noise
 - Look for unusual or nonstandard port usage
 - Flags may be encoded or compressed, try base64, hex, gzip
 - Combine session reconstruction + payload extraction for full analysis
+- If a PCAP is corrupted or truncated, repair it using `pcapfix` before analysis.  
+- Bluetooth captures sometimes require decryption, use `crackle` for BLE traffic.
