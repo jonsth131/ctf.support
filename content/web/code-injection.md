@@ -1,10 +1,23 @@
 ---
-title: Code Injection
+title: "Code Injection"
+description: "Exploit unsafe dynamic code execution in web applications to achieve code execution or sensitive data access."
+date: 2025-10-06
+draft: false
+categories: ["Web"]
+tags: ["code injection", "python", "eval", "exec", "rce", "ctf"]
+authors: ["CTF.Support Team"]
+summary: "Learn how improper input sanitization allows attackers to inject and execute code on the server side."
+aliases: ["/web/code-injection/"]
+slug: "code-injection"
+toc: true
 ---
 
-Code injection is a vulnerability that allows an attacker to execute arbitrary code on a server. This can be used to read, modify, or delete data, or even to execute commands on the underlying operating system.
+## Introduction
 
-For example, consider a web application that uses a function to process user input. The application might call the function with user input, like so:
+Code Injection vulnerabilities occur when user-controllable input is executed directly by the interpreter.  
+In CTFs, this often leads to remote code execution (RCE) or the disclosure of internal files.
+
+## Example: Python `exec()`
 
 ```python
 def process_input(data):
@@ -15,5 +28,14 @@ data = input('Enter some data: ')
 process_input(data)
 ```
 
-If the application does not properly sanitize the input, an attacker could provide data like `import os;os.system('ls')` and the server would execute the command and list the files in the current directory.
+### Exploit
 
+```python
+import os; os.system('cat flag.txt')
+```
+
+## Tips
+
+- Search for functions like `eval`, `exec`, `pickle.loads`, or template evaluation.
+- Inject harmless test payloads first (e.g., `print(1+1)` or `sleep(2)`).
+- Always URL‑encode test injections when passing input via parameters.

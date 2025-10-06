@@ -1,25 +1,37 @@
 ---
-title: IDOR
+title: "IDOR (Insecure Direct Object Reference)"
+description: "Exploit broken access control vulnerabilities by manipulating object identifiers in web applications."
+date: 2025-10-06
+draft: false
+categories: ["Web"]
+tags: ["idor", "access control", "authorization", "ctf"]
+authors: ["CTF.Support Team"]
+summary: "Learn to identify and exploit broken object reference vulnerabilities to access unauthorized data."
+aliases: ["/web/idor/"]
+slug: "idor"
+toc: true
 ---
 
-IDOR (Insecure Direct Object Reference) is a vulnerability that occurs when an application provides direct access to objects based on user-supplied input. As a result, an attacker can manipulate the input and access unauthorized data.
+## Introduction
 
-For example, consider the following URL:
+**IDOR** vulnerabilities occur when direct object references (like IDs) are exposed without proper authorization checks.  
+These weaknesses often provide access to other users' data in CTF web challenges.
 
-```
+## Example
+
+```text
 https://example.com/profile?id=123
 ```
 
-An attacker can change the `id` parameter to access other users' profiles:
+Change the parameter:
 
-```
+```text
 https://example.com/profile?id=456
 ```
 
-### Exploitation
+## Tips
 
-To exploit IDOR, follow these steps:
-
-1. Identify the vulnerable parameter.
-2. Change the parameter value to access unauthorized data.
-3. Analyze the response to confirm the vulnerability.
+- Enumerate sequential IDs and UUIDs.  
+- Look for exposed numeric parameters (`id`, `uid`, `order_id`).  
+- Combine with **authorization tokens** or cookies to confirm privilege checks.  
+- Monitor API responses and status codes for unauthorized access hints.

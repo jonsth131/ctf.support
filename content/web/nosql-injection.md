@@ -1,10 +1,22 @@
 ---
-title: NoSQL Injection
+title: "NoSQL Injection"
+description: "Exploit unsanitized NoSQL queries in MongoDB or similar databases to bypass authentication or extract documents."
+date: 2025-10-06
+draft: false
+categories: ["Web"]
+tags: ["nosql", "mongodb", "injection", "ctf"]
+authors: ["CTF.Support Team"]
+summary: "Understand how crafted JSON input can manipulate NoSQL queries, leading to authentication bypass or data retrieval."
+aliases: ["/web/nosql-injection/"]
+slug: "nosql-injection"
+toc: true
 ---
 
-NoSQL injection is a vulnerability that allows an attacker to manipulate NoSQL queries in a web application. This can be used to read, modify, or delete data from a database, or even to execute commands on the underlying operating system.
+## Introduction
 
-For example, consider a web application that uses a NoSQL database to store user information. The application might construct NoSQL queries by concatenating user input, like so:
+NoSQL databases like MongoDB rely heavily on JSON objects, which can be manipulated by attackers if input is not sanitized.
+
+## Example (Python)
 
 ```python
 from pymongo import MongoClient
@@ -19,10 +31,23 @@ username = input('Enter a username: ')
 print(list(get_user(username)))
 ```
 
-If the application does not properly sanitize the input, an attacker could provide a username like `{"$ne": null}` and the resulting query would be:
+Injection:
+
+```json
+{"$ne": null}
+```
+
+Resulting query:
 
 ```json
 { "username": {"$ne": null} }
 ```
 
-This query would return all users where the `username` field is not `null`, potentially exposing sensitive information.
+This bypasses user filtering and returns all results.
+
+## Tips
+
+- Input contexts to test: query filters, `$where` clauses, `$regex`, `$gt/$lt`.
+- Use JSON-oriented payloads (`{"$ne": null}` or `{"$gt": ""}`).
+- Escape or validate JSON structures before execution.
+- In blind challenges, look for time-based payloads using heavy operations.

@@ -1,10 +1,23 @@
 ---
-title: Command Injection
+title: "Command Injection"
+description: "Exploit unsanitized parameters in system commands to execute arbitrary OS commands on a web server."
+date: 2025-10-06
+draft: false
+categories: ["Web"]
+tags: ["command injection", "rce", "subprocess", "os", "web security"]
+authors: ["CTF.Support Team"]
+summary: "Discover how web applications vulnerable to OS-level command injection allow arbitrary command execution."
+aliases: ["/web/command-injection/"]
+slug: "command-injection"
+toc: true
 ---
 
-Command injection is a vulnerability that allows an attacker to execute arbitrary commands on a server. This can be used to read, modify, or delete data, or even to execute commands on the underlying operating system.
+## Introduction
 
-For example, consider a web application that allows users to upload files. The application might use a command to process the uploaded file, like so:
+**Command Injection** occurs when user input is concatenated into system commands executed by the application.  
+In CTF challenges, this often grants full control over the server environment.
+
+## Example (Python)
 
 ```python
 import subprocess
@@ -16,10 +29,20 @@ filename = input('Enter a filename: ')
 print(process_file(filename))
 ```
 
-If the application does not properly sanitize the input, an attacker could provide a filename like `file.txt; ls` and the resulting command would be:
+### Exploit
 
-```sh
+```text
+filename = "file.txt; ls"
+```
+
+Resulting command:
+
+```bash
 cat file.txt; ls
 ```
 
-This command would read the contents of `file.txt` and then list the files in the current directory.
+## Tips
+
+- Chain commands with `;`, `&&`, or `|`.
+- Use blind command injection (e.g., `ping -c 1 <collaborator>`) to confirm execution.
+- Try OS-specific payloads if Linux/Windows detection is uncertain.

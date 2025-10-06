@@ -1,12 +1,23 @@
 ---
-title: SSTI
+title: "Server-Side Template Injection (SSTI)"
+description: "Exploit template engines to inject expressions or execute arbitrary code on vulnerable web servers."
+date: 2025-10-06
+draft: false
+categories: ["Web"]
+tags: ["ssti", "template injection", "jinja2", "web exploitation", "ctf"]
+authors: ["CTF.Support Team"]
+summary: "Learn to exploit server-side template engines such as Jinja2 or Twig to execute code and extract flags in web CTFs."
+aliases: ["/web/ssti/"]
+slug: "ssti"
+toc: true
 ---
 
-SSTI (Server Side Template Injection) is a vulnerability that allows an attacker to inject code into a server-side template. This can result in remote code execution on the server.
+## Introduction
 
-For example, consider a web application that uses a template engine to render HTML. The application might allow users to provide input that is rendered in the template. If the application does not properly sanitize the input, an attacker could provide a template that includes code to execute on the server.
+Server-Side Template Injection (SSTI) occurs when user input is embedded in a template without proper sanitization.  
+Template engines like **Jinja2** (Python), **Twig** (PHP), or **Velocity** (Java) can then interpret malicious expressions as code.
 
-Consider the following example:
+## Example (Python / Jinja2)
 
 ```python
 from jinja2 import Template
@@ -20,4 +31,19 @@ context = {'user': 'Alice'}
 print(render_template(template, **context))
 ```
 
-If the application does not properly sanitize the template, an attacker could provide a template like `{{ 7 * 7 }}` and the server would execute the code and return `49` to the attacker.
+Malicious input:
+
+```python
+{{7*7}}
+```
+
+Server evaluates and returns:
+
+```text
+49
+```
+
+## Tips
+
+- Test placeholders: `{{7*7}}` for arithmetic confirmation.
+- Find filters or functions: `{{config.__class__.__mro__[1].__subclasses__()}}`.
