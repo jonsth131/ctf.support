@@ -58,20 +58,21 @@ m = c^d mod n
 ```python
 #!/usr/bin/env python3
 
-from Crypto.Util.number import inverse
+from Crypto.Util.number import long_to_bytes
 
-c = 264927351071199256392067715088101727274736234498820
-n = 324724323060034233289551751185171379596941511493891
-e = 65537
-p = 25001545096244227516337
-q = 12988170203481337861511552243
+if __name__ == "__main__":
+    c = 8533139361076999596208540806559574687666062896040360148742851107661304651861689
+    p = 1617549722683965197900599011412144490161
+    q = 475693130177488446807040098678772442581573
+    n = p * q
+    e = 65537
 
-phi = (p - 1) * (q - 1)
-d = inverse(e, phi)
+    phi = (p - 1) * (q - 1)
+    d = pow(e, -1, phi)
+    m = pow(c, d, n)
+    pt = long_to_bytes(m).decode()
 
-m = pow(c, d, n)
-
-print(bytes.fromhex(hex(m)[2:]).decode('utf-8'))
+    print(pt)
 ```
 
 ## ElGamal
