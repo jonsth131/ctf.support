@@ -23,7 +23,7 @@ In CTF reverse engineering challenges, this step often exposes authentication ro
 |----------------------------------|--------------------------------------------------------|
 | Decompile Java `.class` / `.jar` | `jadx-gui file.apk` or `java -jar JD-GUI.jar file.jar` |
 | Decompile .NET binaries          | `ilspycmd` or `dnSpyEx`                                |
-| Decompile Python `.pyc`          | `uncompyle6 file.pyc`                                  |
+| Decompile Python `.pyc`          | `uncompyle6 file.pyc`, `pycdc file.pyc`                |
 | Extract PyInstaller executables  | `python pyinstxtractor.py target.exe`                  |
 
 ## Tools
@@ -42,6 +42,7 @@ In CTF reverse engineering challenges, this step often exposes authentication ro
 | [uncompyle6](https://github.com/rocky/python-uncompyle6)                                     | Python ≤ 3.8   | Decompile `.pyc` bytecode                |
 | [Decompyle++](https://github.com/zrax/pycdc)                                                 | Python ≥ 3.9   | Alternative modern Python decompiler     |
 | [pyinstxtractor](https://github.com/extremecoders-re/pyinstxtractor)                         | Python EXE     | Decompile PyInstaller executables        |
+| [pycdc](https://github.com/zrax/pycdc)                                                       | Python         | C++ Decompiler for Python 2.x and 3.x    |
 | [JPEXS Decompiler](https://github.com/jindrapetrik/jpexs-decompiler)                         | Flash          | Decompile `.swf` (ActionScript) files    |
 
 ## Tips

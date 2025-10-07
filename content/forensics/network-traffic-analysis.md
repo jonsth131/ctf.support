@@ -45,6 +45,7 @@ Goal: Extract flags, reconstruct sessions, and detect anomalies.
 | `tcpdump`                                                         | Capture or filter traffic                          |
 | `pcapfix` / [Online Utility](https://f00l.de/hacking/pcapfix.php) | Repair or reconstruct corrupted PCAP capture files |
 | [Crackle](https://github.com/mikeryan/crackle)                    | Crack Bluetooth Low Energy (BLE) encrypted traffic |
+| [NTLMRawUnHide](https://github.com/cddmp/ntlmrawunhide)           | Extract NTLM/NetNTLMv2 hashes from pcaps           |
 | Scapy / Python                                                    | Parse, manipulate, or extract custom protocol data |
 
 ---
@@ -111,6 +112,76 @@ tshark -r capture.pcap -T fields -e dns.qry.name
 
 ---
 
+### Authentication Traffic & Credential Recovery
+
+Network captures from corporate environments or Windows‑based systems often include **NTLM, Kerberos, or HTTP authentication** exchanges.
+These can be analyzed to recover usernames and crack captured password hashes.
+
+#### NTLM Authentication in Network Traffic
+
+NTLM (Network LAN Manager) is a challenge‑response authentication protocol.
+When captured in PCAPs (especially over SMB, WebDAV, or HTTP Negotiate requests), it often appears in Base64 strings within an `Authorization` or `WWW‑Authenticate` header.
+
+##### Example – WebDAV NTLM Transaction
+
+```text
+PROPFIND /share HTTP/1.1
+User-Agent: Microsoft-WebDAV-MiniRedir/10.0.19045
+Host: dcc01
+Authorization: Negotiate TlRMTVNTUAADAAAAGAAYAHQAAAA2ATYBjAAAAA...
+```
+
+You’ll typically see three stages:
+
+1. **Negotiate**: client requests authentication types.
+2. **Challenge**: server issues nonce and challenge.
+3. **Authenticate**: client responds with hashed credentials.
+
+#### Extracting Hashes from PCAPs
+
+To recover these hash strings for offline cracking:
+
+- Use [`NTLMRawUnHide`](https://github.com/cddmp/ntlmrawunhide) to parse the capture and extract NetNTLMv1/v2 hashes:
+
+```bash
+python3 NTLMRawUnHide.py -i capture.pcap -o ntlmhashes.txt
+```
+
+---
+
+#### Cracking NTLM Hashes
+
+Once collected, crack with **John the Ripper** or **Hashcat**.
+
+```bash
+# Using John the Ripper
+john ntlmhashes.txt --wordlist=rockyou.txt --format=netntlmv2
+
+# Using Hashcat
+hashcat -m 5600 -a 0 ntlmhashes.txt rockyou.txt
+```
+
+Sample John output indicating successful cracks:
+
+```text
+Loaded 13 password hashes ( netntlmv2 )
+[RHODE_ISLAND_Z] ( CTF )
+13g 0:00:00:00 DONE
+```
+
+---
+
+#### Common Encapsulation Points
+
+| Protocol                             | Typical Port | Authentication Header / Mechanism                   |
+|--------------------------------------|--------------|-----------------------------------------------------|
+| **SMB**                              | 445 / 139    | NTLM handshake (negotiate, challenge, authenticate) |
+| **HTTP / WebDAV**                    | 80 / 443     | `Authorization: Negotiate TlRMTV...`                |
+| **POP3 / IMAP / SMTP (MS Exchange)** | Various      | NTLM Auth responses                                 |
+| **LDAP / Kerberos**                  | 389 / 88     | May contain tickets or hash patterns                |
+
+---
+
 ### Exporting Files
 
 Extract HTTP files using Wireshark: `File -> Export Objects -> HTTP`
@@ -162,3 +233,7 @@ Documentation for analyzing USB HID data can be found at [HID Usage Tables](http
 - Combine session reconstruction + payload extraction for full analysis
 - If a PCAP is corrupted or truncated, repair it using `pcapfix` before analysis.
 - Bluetooth captures sometimes require decryption, use `crackle` for BLE traffic.
+
+## Related Topics
+
+- [Password Cracking](/crypto/password-cracking/) - Wordlists and hash cracking workflows.
