@@ -14,7 +14,7 @@ toc: true
 
 ## Introduction
 
-Code Injection vulnerabilities occur when user-controllable input is executed directly by the interpreter.  
+Code Injection vulnerabilities occur when user-controllable input is executed directly by the interpreter.
 In CTFs, this often leads to remote code execution (RCE) or the disclosure of internal files.
 
 ## Example: Python `exec()`

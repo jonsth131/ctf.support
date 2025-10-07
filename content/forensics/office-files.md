@@ -15,7 +15,7 @@ slug: "office-files"
 
 ## Introduction
 
-Office documents (like `.doc`, `.docx`, `.xls`, `.ppt`, etc.) often contain embedded macros, metadata, or hidden objects that may store flags or malicious code.  
+Office documents (like `.doc`, `.docx`, `.xls`, `.ppt`, etc.) often contain embedded macros, metadata, or hidden objects that may store flags or malicious code.
 In CTF challenges, analyzing these files can reveal hidden strings, encoded data, or VBA macros.
 
 ## Quick Reference

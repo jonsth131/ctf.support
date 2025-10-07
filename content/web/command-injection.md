@@ -14,7 +14,7 @@ toc: true
 
 ## Introduction
 
-**Command Injection** occurs when user input is concatenated into system commands executed by the application.  
+**Command Injection** occurs when user input is concatenated into system commands executed by the application.
 In CTF challenges, this often grants full control over the server environment.
 
 ## Example (Python)

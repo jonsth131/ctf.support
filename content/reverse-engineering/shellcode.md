@@ -14,23 +14,23 @@ toc: true
 
 ## Introduction
 
-Shellcode is small executable machine code, often used in exploitation or CTF challenges.  
+Shellcode is small executable machine code, often used in exploitation or CTF challenges.
 Instead of running it directly (which can crash your system), debugging tools enable safe inspection of its behavior.
 
 ## Quick Reference
 
-- Use **BlobRunner** to harness shellcode for debugging.  
-- Load shellcode inside a sandboxed VM or emulator (e.g., QEMU, VirtualBox).  
-- Disassemble and inspect flow using Ghidra or Radare2.
+- Use **BlobRunner** to harness shellcode for debugging.
+- Load shellcode inside a sandboxed VM or emulator (e.g., QEMU, VirtualBox).
+- Disassemble and inspect flow using Ghidra or Radare2.
 
 ## Tools
 
 | Tool                                                                | Purpose                                                 |
 |---------------------------------------------------------------------|---------------------------------------------------------|
 | [BlobRunner](https://github.com/OALabs/BlobRunner)                  | Run and debug shellcode safely inside a Windows process |
-| [Immunity Debugger](https://www.immunityinc.com/products/debugger/) | Debug shellcode in Windows sandbox environment          |
-| [x64dbg](https://x64dbg.com/)                                       | Visual debugger for injecting and analyzing payloads    |
-| [Ghidra](https://ghidra-sre.org/)                                   | Disassemble and analyze shellcode statically            |
+| [Immunity Debugger](https://www.immunityinc.com/products/debugger/) | Debug shellcode in Windows sandbox environment          |
+| [x64dbg](https://x64dbg.com/)                                       | Visual debugger for injecting and analyzing payloads    |
+| [Ghidra](https://ghidra-sre.org/)                                   | Disassemble and analyze shellcode statically            |
 
 ## Example: Debugging with BlobRunner
 
@@ -38,4 +38,4 @@ Instead of running it directly (which can crash your system), debugging tools en
 BlobRunner.exe shellcode.bin
 ```
 
-This loads the shellcode into a simple harness program so you can attach **x64dbg** or **Immunity Debugger** for step‑by‑step analysis.
+This loads the shellcode into a simple harness program so you can attach **x64dbg** or **Immunity Debugger** for step‑by‑step analysis.

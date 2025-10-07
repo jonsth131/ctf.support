@@ -15,7 +15,7 @@ toc: true
 
 ## password_hash()
 
-When using `PASSWORD_BCRYPT` (default since PHP 5.5.0), passwords are limited to **72 bytes**.  
+When using `PASSWORD_BCRYPT` (default since PHP 5.5.0), passwords are limited to **72 bytes**.
 Anything longer is silently truncated, this can weaken brute-force complexity or comparison logic.
 
 Example behavior:

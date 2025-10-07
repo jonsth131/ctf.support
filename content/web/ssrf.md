@@ -14,7 +14,7 @@ toc: true
 
 ## Introduction
 
-SSRF allows an attacker to force a vulnerable server to perform HTTP requests to internal resources or remote endpoints.  
+SSRF allows an attacker to force a vulnerable server to perform HTTP requests to internal resources or remote endpoints.
 This can bypass firewalls, access metadata, or exfiltrate secrets.
 
 ## Example (Python)

@@ -14,15 +14,15 @@ toc: false
 
 ## Introduction
 
-**Symmetric cryptography** uses *one shared secret key* for both encryption and decryption.  
-It’s fast, efficient, and forms the basis of most real‑world encryption (e.g., TLS record layer, disk encryption, VPNs) and many CTF crypto tasks.
+**Symmetric cryptography** uses *one shared secret key* for both encryption and decryption.
+It’s fast, efficient, and forms the basis of most real‑world encryption (e.g., TLS record layer, disk encryption, VPNs) and many CTF crypto tasks.
 
 Typically, challenges involve:
 
-- Recovering plaintext when an algorithm or mode is mis‑used
-- Exploiting key reuse (especially in stream ciphers)
-- Identifying encryption modes by pattern analysis
-- Re‑implementing simple ciphers from network forensic data
+- Recovering plaintext when an algorithm or mode is mis‑used
+- Exploiting key reuse (especially in stream ciphers)
+- Identifying encryption modes by pattern analysis
+- Re‑implementing simple ciphers from network forensic data
 
 ---
 
@@ -30,59 +30,59 @@ Typically, challenges involve:
 
 | Tool                                                                      | Purpose                                                      |
 |---------------------------------------------------------------------------|--------------------------------------------------------------|
-| [CyberChef](https://gchq.github.io/CyberChef/)                            | RC4 decryption, base64 processing, stream cipher experiments |
-| [PyCryptodome](https://pycryptodome.readthedocs.io/)                      | Implementation of RC4 (`ARC4`) for scripting CTF challenges  |
-| [RC4 Implementation Playground](https://asecuritysite.com/encryption/rc4) | Visual demonstration of KSA and PRGA                         |
+| [CyberChef](https://gchq.github.io/CyberChef/)                            | RC4 decryption, base64 processing, stream cipher experiments |
+| [PyCryptodome](https://pycryptodome.readthedocs.io/)                      | Implementation of RC4 (`ARC4`) for scripting CTF challenges  |
+| [RC4 Implementation Playground](https://asecuritysite.com/encryption/rc4) | Visual demonstration of KSA and PRGA                         |
 
 ---
 
-## Block Ciphers
+## Block Ciphers
 
-Block ciphers operate on fixed‑size blocks of data (usually 128 bits).
+Block ciphers operate on fixed‑size blocks of data (usually 128 bits).
 
-Common block ciphers:
+Common block ciphers:
 
-- **AES (Advanced Encryption Standard)**: modern standard for secure encryption  
-- **DES / 3DES**: legacy algorithms still seen in older challenges  
-- **Blowfish, Twofish, IDEA**: alternative historical implementations  
+- **AES (Advanced Encryption Standard)**: modern standard for secure encryption
+- **DES / 3DES**: legacy algorithms still seen in older challenges
+- **Blowfish, Twofish, IDEA**: alternative historical implementations
 
-Encryption example:
+Encryption example:
 
 ```text
-ciphertext = Encrypt(key, plaintext)
-plaintext  = Decrypt(key, ciphertext)
+ciphertext = Encrypt(key, plaintext)
+plaintext  = Decrypt(key, ciphertext)
 ```
 
-### Modes of Operation
+### Modes of Operation
 
-Because block ciphers work on fixed blocks, they’re combined with **modes of operation** to handle arbitrary‑length data.
+Because block ciphers work on fixed blocks, they’re combined with **modes of operation** to handle arbitrary‑length data.
 
 | Mode | Description                                        | Common Weakness in CTFs                                        |
 |------|----------------------------------------------------|----------------------------------------------------------------|
-| ECB  | Each block encrypted independently.                | Leaks patterns, identical plaintexts -> identical ciphertexts. |
-| CBC  | XORs each block with previous ciphertext.          | Padding oracle attacks via IV or padding error oracle.         |
-| CTR  | Turns block cipher into stream cipher via counter. | Key/nonce reuse causes keystream leakage.                      |
-| GCM  | Authenticated encryption (AEAD).                   | Usually secure, unless nonces are reused.                      |
+| ECB  | Each block encrypted independently.                | Leaks patterns, identical plaintexts -> identical ciphertexts. |
+| CBC  | XORs each block with previous ciphertext.          | Padding oracle attacks via IV or padding error oracle.         |
+| CTR  | Turns block cipher into stream cipher via counter. | Key/nonce reuse causes keystream leakage.                      |
+| GCM  | Authenticated encryption (AEAD).                   | Usually secure, unless nonces are reused.                      |
 
 ---
 
-## Stream Ciphers
+## Stream Ciphers
 
-Stream ciphers encrypt data byte‑by‑byte using a pseudorandom keystream generated from a secret key.  
+Stream ciphers encrypt data byte‑by‑byte using a pseudorandom keystream generated from a secret key.
 
-Typical pattern:
+Typical pattern:
 
 ```text
 ciphertext[i] = plaintext[i] XOR keystream[i]
 ```
 
-If the same keystream is used for two messages (with same key and nonce), you can recover plaintexts by XORing ciphertexts together:
+If the same keystream is used for two messages (with same key and nonce), you can recover plaintexts by XORing ciphertexts together:
 
 ```text
 c1 ⊕ c2 = p1 ⊕ p2
 ```
 
-Key reuse is fatal for stream ciphers, a popular CTF theme.
+Key reuse is fatal for stream ciphers, a popular CTF theme.
 
 ---
 
@@ -90,13 +90,13 @@ Key reuse is fatal for stream ciphers, a popular CTF theme.
 
 ### Overview
 
-**RC4 (Rivest’s Cipher 4)** is a stream cipher designed in 1987 by Ron Rivest.  
-It became widely used in protocols like SSL/TLS and WEP, though it’s now considered insecure.
+**RC4 (Rivest’s Cipher 4)** is a stream cipher designed in 1987 by Ron Rivest.
+It became widely used in protocols like SSL/TLS and WEP, though it’s now considered insecure.
 
-RC4 is simple and fast, using two reversible steps:
+RC4 is simple and fast, using two reversible steps:
 
-1. **Key‑Scheduling Algorithm (KSA)**: initializes a permutation of 256 bytes based on the key.  
-2. **Pseudo‑Random Generation Algorithm (PRGA)**: outputs one byte of keystream per loop.
+1. **Key‑Scheduling Algorithm (KSA)**: initializes a permutation of 256 bytes based on the key.
+2. **Pseudo‑Random Generation Algorithm (PRGA)**: outputs one byte of keystream per loop.
 
 ### Algorithm Outline
 
@@ -120,22 +120,22 @@ def rc4_encrypt(key, plaintext):
     return bytes(out)
 ```
 
-Encryption and decryption are identical operations.
+Encryption and decryption are identical operations.
 
 ---
 
-### Common Weaknesses
+### Common Weaknesses
 
 | Weakness                   | Description                                                                 | Exploitation Idea                                   |
 |----------------------------|-----------------------------------------------------------------------------|-----------------------------------------------------|
-| Key reuse                  | Using the same key/IV across messages leaks plaintext relationships.        | XOR ciphertexts to eliminate keystream.             |
-| Keystream bias             | Early RC4 output bytes are biased (non‑random).                             | Statistical attacks recover key bytes.              |
-| Known plaintext            | If you know part of the plaintext, you can recover corresponding keystream. | Generate keystream → decrypt rest of message.       |
-| Predictable key derivation | Weak keys with small entropy (e.g., short passwords).                       | Brute‑force keystream and compare known ciphertext. |
+| Key reuse                  | Using the same key/IV across messages leaks plaintext relationships.        | XOR ciphertexts to eliminate keystream.             |
+| Keystream bias             | Early RC4 output bytes are biased (non‑random).                             | Statistical attacks recover key bytes.              |
+| Known plaintext            | If you know part of the plaintext, you can recover corresponding keystream. | Generate keystream → decrypt rest of message.       |
+| Predictable key derivation | Weak keys with small entropy (e.g., short passwords).                       | Brute‑force keystream and compare known ciphertext. |
 
 ---
 
-### Sample CTF Decryption Workflow
+### Sample CTF Decryption Workflow
 
 ```python
 from Crypto.Cipher import ARC4
@@ -150,4 +150,4 @@ plaintext = rc4.decrypt(cipher)
 print(plaintext.decode())
 ```
 
-You can replace the `key` when testing different possible passwords or derived keys.
+You can replace the `key` when testing different possible passwords or derived keys.

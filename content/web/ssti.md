@@ -14,7 +14,7 @@ toc: true
 
 ## Introduction
 
-Server-Side Template Injection (SSTI) occurs when user input is embedded in a template without proper sanitization.  
+Server-Side Template Injection (SSTI) occurs when user input is embedded in a template without proper sanitization.
 Template engines like **Jinja2** (Python), **Twig** (PHP), or **Velocity** (Java) can then interpret malicious expressions as code.
 
 ## Example (Python / Jinja2)

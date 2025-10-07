@@ -14,7 +14,7 @@ toc: true
 
 ## Introduction
 
-The **USN Journal** (`$Extend\$J`) is part of the NTFS file system and records *every change* made to files and directories, creations, deletions, renames, and data writes.  
+The **USN Journal** (`$Extend\$J`) is part of the NTFS file system and records *every change* made to files and directories, creations, deletions, renames, and data writes.
 Examining `$J` can reconstruct activity timelines even after logs or prefetch files have been cleared.
 
 On NTFS volumes, the journal file resides at:
@@ -36,21 +36,21 @@ Each journal record includes:
 | Field                    | Description                                         |
 |--------------------------|-----------------------------------------------------|
 | Timestamp                | When the event or update occurred                   |
-| File Reference Number    | Internal file ID used by NTFS                       |
-| Reason Flags             | What action occurred (create, delete, rename, etc.) |
-| Parent File Ref          | Directory the file belonged to                      |
-| Security ID / Attributes | Permission or metadata modifications                |
+| File Reference Number    | Internal file ID used by NTFS                       |
+| Reason Flags             | What action occurred (create, delete, rename, etc.) |
+| Parent File Ref          | Directory the file belonged to                      |
+| Security ID / Attributes | Permission or metadata modifications                |
 
-Common **Reason Flags** include:
+Common **Reason Flags** include:
 
 | Flag       | Meaning                |
 |------------|------------------------|
-| 0x00000100 | File Create            |
-| 0x00000200 | File Delete            |
-| 0x00002000 | Data Overwrite         |
-| 0x00004000 | Data Extend            |
-| 0x00008000 | Data Truncation        |
-| 0x00010000 | File Rename (New Name) |
+| 0x00000100 | File Create            |
+| 0x00000200 | File Delete            |
+| 0x00002000 | Data Overwrite         |
+| 0x00004000 | Data Extend            |
+| 0x00008000 | Data Truncation        |
+| 0x00010000 | File Rename (New Name) |
 
 ## Example Usage
 

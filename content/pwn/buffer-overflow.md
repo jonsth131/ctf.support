@@ -14,16 +14,16 @@ toc: true
 
 ## Introduction
 
-A buffer overflow occurs when a program writes more data to a buffer than it can hold, overwriting adjacent memory such as return addresses.
+A buffer overflow occurs when a program writes more data to a buffer than it can hold, overwriting adjacent memory such as return addresses.
 
-By carefully crafting input, you can redirect execution flow to arbitrary code.
+By carefully crafting input, you can redirect execution flow to arbitrary code.
 
 ## Pattern Generation
 
-- [Buffer overflow pattern generator](https://wiremask.eu/tools/buffer-overflow-pattern-generator/): Web utility for 32‑bit & 64‑bit patterns
-- Pwntools: `cyclic(n)` -> generate pattern / `cyclic_find(offset)` -> find crash offset
+- [Buffer overflow pattern generator](https://wiremask.eu/tools/buffer-overflow-pattern-generator/): Web utility for 32‑bit & 64‑bit patterns
+- Pwntools: `cyclic(n)` -> generate pattern / `cyclic_find(offset)` -> find crash offset
 
-Example (64‑bit pattern):
+Example (64‑bit pattern):
 
 ```python
 from pwn import *

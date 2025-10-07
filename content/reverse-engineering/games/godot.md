@@ -14,7 +14,7 @@ toc: true
 
 ## Introduction
 
-[Godot](https://godotengine.org/) is an open-source engine that stores assets and scripts in `.pck` package files.  
+[Godot](https://godotengine.org/) is an open-source engine that stores assets and scripts in `.pck` package files.
 In CTF challenges, the flags or validation logic are frequently found in the decompiled **GDScript** files.
 
 ## Quick Reference
@@ -33,7 +33,7 @@ In CTF challenges, the flags or validation logic are frequently found in the dec
 
 ## Tips
 
-- Check `project.godot` for engine version (important for decompression).  
-- Search `.gd` scripts for function names like `check_flag()` or `validate_input()`.  
-- Text-based configuration and JSON files inside the package often conceal encoded strings.  
+- Check `project.godot` for engine version (important for decompression).
+- Search `.gd` scripts for function names like `check_flag()` or `validate_input()`.
+- Text-based configuration and JSON files inside the package often conceal encoded strings.
 - You can rebuild extracted content in Godot for easier navigation.

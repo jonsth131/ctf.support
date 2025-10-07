@@ -14,7 +14,7 @@ toc: true
 
 ## Introduction
 
-Before diving into full decompilation, basic static and dynamic analysis can uncover valuable information from any binary.  
+Before diving into full decompilation, basic static and dynamic analysis can uncover valuable information from any binary.
 In CTF challenges, tools like `strings`, `strace`, and `ltrace` can expose command execution, embedded text, or system calls that lead to the flag path.
 
 ## Quick Reference

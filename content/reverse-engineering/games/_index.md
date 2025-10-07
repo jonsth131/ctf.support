@@ -14,7 +14,7 @@ toc: false
 
 ## Introduction
 
-CTF game challenges often hide flags or sensitive logic inside modern engines like **Unity**, **Godot**, or **Unreal**.  
+CTF game challenges often hide flags or sensitive logic inside modern engines like **Unity**, **Godot**, or **Unreal**.
 By analyzing assemblies, unpacking resources, and inspecting internal assets, you can recover the logic verifying flag input or encryption keys.
 
 {{< toc-tree >}}

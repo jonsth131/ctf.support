@@ -14,7 +14,7 @@ toc: false
 
 ## Introduction
 
-Console ROMs often contain mixes of executable instructions, sprites, maps, and compressed data.  
+Console ROMs often contain mixes of executable instructions, sprites, maps, and compressed data.
 In CTFs, flags can hide within plain-text resources, or as encoded data inside assembly routines.
 
 {{< toc-tree >}}

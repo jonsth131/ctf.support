@@ -43,8 +43,8 @@ Goal: Extract flags, reconstruct sessions, and detect anomalies.
 | [Wireshark](https://www.wireshark.org/)                           | Graphical PCAP analysis, protocol dissection       |
 | `tshark`                                                          | Command-line Wireshark for scripting               |
 | `tcpdump`                                                         | Capture or filter traffic                          |
-| `pcapfix` / [Online Utility](https://f00l.de/hacking/pcapfix.php) | Repair or reconstruct corrupted PCAP capture files |
-| [Crackle](https://github.com/mikeryan/crackle)                    | Crack Bluetooth Low Energy (BLE) encrypted traffic |
+| `pcapfix` / [Online Utility](https://f00l.de/hacking/pcapfix.php) | Repair or reconstruct corrupted PCAP capture files |
+| [Crackle](https://github.com/mikeryan/crackle)                    | Crack Bluetooth Low Energy (BLE) encrypted traffic |
 | Scapy / Python                                                    | Parse, manipulate, or extract custom protocol data |
 
 ---
@@ -117,9 +117,9 @@ Extract HTTP files using Wireshark: `File -> Export Objects -> HTTP`
 
 ---
 
-### Fix Broken Capture Files
+### Fix Broken Capture Files
 
-Sometimes challenge PCAPs are intentionally truncated or corrupted.  
+Sometimes challenge PCAPs are intentionally truncated or corrupted.
 Use **pcapfix** to repair header and packet data:
 
 ```bash
@@ -130,9 +130,9 @@ An online version is available: [https://f00l.de/hacking/pcapfix.php](https://f0
 
 ---
 
-### Analyze Bluetooth Captures
+### Analyze Bluetooth Captures
 
-Bluetooth Low Energy (BLE) network captures may contain pairing or data exchange information.
+Bluetooth Low Energy (BLE) network captures may contain pairing or data exchange information.
 
 Use [Crackle](https://github.com/mikeryan/crackle) to crack BLE‑encrypted connections and recover encryption keys:
 
@@ -160,5 +160,5 @@ Documentation for analyzing USB HID data can be found at [HID Usage Tables](http
 - Look for unusual or nonstandard port usage
 - Flags may be encoded or compressed, try base64, hex, gzip
 - Combine session reconstruction + payload extraction for full analysis
-- If a PCAP is corrupted or truncated, repair it using `pcapfix` before analysis.  
-- Bluetooth captures sometimes require decryption, use `crackle` for BLE traffic.
+- If a PCAP is corrupted or truncated, repair it using `pcapfix` before analysis.
+- Bluetooth captures sometimes require decryption, use `crackle` for BLE traffic.

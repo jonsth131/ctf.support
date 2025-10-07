@@ -14,25 +14,25 @@ toc: true
 
 ## Introduction
 
-Game Boy Advance (GBA) ROMs contain ARM code and asset data (sprites, maps, text).  
+Game Boy Advance (GBA) ROMs contain ARM code and asset data (sprites, maps, text).
 Reverse engineering them helps reveal game logic or check conditions used to validate flags in CTF tasks.
 
 ## Quick Reference
 
-- Run ROM in [mGBA](https://mgba.io/)  
+- Run ROM in [mGBA](https://mgba.io/)
 - Debug address space with **no$gba** or **arm‑none‑eabi‑gdb**
-- Extract assets using `binwalk -e file.gba`
+- Extract assets using `binwalk -e file.gba`
 
 ## Tools
 
 | Tool                                             | Purpose                                   |
 |--------------------------------------------------|-------------------------------------------|
 | [mGBA](https://mgba.io/)                         | Emulator supporting debugging and tracing |
-| [Ghidra](https://ghidra-sre.org/)                | Disassemble ARM and THUMB code            |
+| [Ghidra](https://ghidra-sre.org/)                | Disassemble ARM and THUMB code            |
 | [binwalk](https://github.com/ReFirmLabs/binwalk) | Detect embedded resources                 |
 
 ## Tips
 
-- Look for ASCII text blocks in the ROM, they often encode hints or flags.  
-- Set breakpoints on string comparison functions to track input validation.  
-- Some GBA ROMs use simple checksums or crypto that can be patched with a hex editor.
+- Look for ASCII text blocks in the ROM, they often encode hints or flags.
+- Set breakpoints on string comparison functions to track input validation.
+- Some GBA ROMs use simple checksums or crypto that can be patched with a hex editor.

@@ -14,7 +14,7 @@ toc: true
 
 ## Introduction
 
-Many CTF web challenges rely on **JavaScript** for client‑side validation, obfuscation, or logic hiding.  
+Many CTF web challenges rely on **JavaScript** for client‑side validation, obfuscation, or logic hiding.
 Understanding and reversing it can reveal hidden cryptographic routines, flag validators, or exploitable vulnerabilities (like **prototype pollution**).
 
 ---
@@ -23,23 +23,23 @@ Understanding and reversing it can reveal hidden cryptographic routines, flag va
 
 | Task                                             | Tool / Method                                                                                    |
 |--------------------------------------------------|--------------------------------------------------------------------------------------------------|
-| Deobfuscate JS                                   | [de4js](https://lelinhtinh.github.io/de4js/), [JavaScript Deobfuscator](https://deobfuscate.io/) |
-| Analyze Obfuscator.io output                     | [Obfuscator.io Deobfuscator](https://obf-io.deobfuscate.io/)                                     |
+| Deobfuscate JS                                   | [de4js](https://lelinhtinh.github.io/de4js/), [JavaScript Deobfuscator](https://deobfuscate.io/) |
+| Analyze Obfuscator.io output                     | [Obfuscator.io Deobfuscator](https://obf-io.deobfuscate.io/)                                     |
 | Scan `package-lock.json` for vulnerable packages | `npm audit`                                                                                      |
-| Alternative vulnerability scanner                | [Snyk CLI](https://github.com/snyk/cli)                                                          |
+| Alternative vulnerability scanner                | [Snyk CLI](https://github.com/snyk/cli)                                                          |
 
 ---
 
 ## Obfuscation Analysis
 
-JavaScript challenges often contain obfuscated logic meant to slow down analysis or hide flags.  
+JavaScript challenges often contain obfuscated logic meant to slow down analysis or hide flags.
 Several tools can **unpack** and **beautify** code automatically:
 
 | Tool                                                         | Description                                         |
 |--------------------------------------------------------------|-----------------------------------------------------|
 | [de4js](https://lelinhtinh.github.io/de4js/)                 | Browser-based universal JS deobfuscator             |
 | [deobfuscate.io](https://deobfuscate.io/)                    | Online service to unpack obfuscator‑style JS        |
-| [Obfuscator.io Deobfuscator](https://obf-io.deobfuscate.io/) | Specialized tool for reversing obfuscator.io output |
+| [Obfuscator.io Deobfuscator](https://obf-io.deobfuscate.io/) | Specialized tool for reversing obfuscator.io output |
 | [JSNice](https://www.jsnice.org/)                            | AI-based beautifier with variable name recovery     |
 
 ---
@@ -94,6 +94,6 @@ In real attacks, this can corrupt configuration data or inject arbitrary code pa
 
 ## Tips
 
-- Use DevTools Pretty Print to quickly format JavaScript in the browser.
+- Use DevTools Pretty Print to quickly format JavaScript in the browser.
 - In CTFs, search for suspicious variable names or encoded strings (`atob`, `btoa`, `fromCharCode`).
 - If a script performs Base64 decoding or XOR operations, reverse it using Node.js or Python to extract the hidden flag.

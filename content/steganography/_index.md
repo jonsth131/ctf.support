@@ -14,7 +14,7 @@ slug: "steganography"
 
 ## Introduction
 
-**Steganography** is the practice of **hiding data inside ordinary files**, such as images, audio recordings, or text.  
+**Steganography** is the practice of **hiding data inside ordinary files**, such as images, audio recordings, or text.
 Unlike encryption, which hides *meaning*, steganography hides the *existence* of data.
 
 In CTF challenges, steganography often conceals **flags**, **keys**, or **next‑stage clues** within visually or audibly normal files.

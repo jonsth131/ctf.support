@@ -14,15 +14,15 @@ toc: true
 
 ## Introduction
 
-**Shellcode** is binary code written in assembly used to execute specific operations, usually to spawn a shell or modify system state.
+**Shellcode** is binary code written in assembly used to execute specific operations, usually to spawn a shell or modify system state.
 
-In CTFs, you inject shellcode into an overflow or overwrite vulnerability to gain control over execution.
+In CTFs, you inject shellcode into an overflow or overwrite vulnerability to gain control over execution.
 
 ## Pwntools
 
-`pwntools` can assemble and inject shellcode quickly.
+`pwntools` can assemble and inject shellcode quickly.
 
-Example to generate Linux x64 shellcode to run sh:
+Example to generate Linux x64 shellcode to run sh:
 
 ``` python
 from pwnlib import *
@@ -34,21 +34,21 @@ print(shellcode)
 
 ## MSFvenom
 
-`msfvenom` (from Metasploit) is another common generator.
+`msfvenom` (from Metasploit) is another common generator.
 
-Generate payload:
-
-```bash
-msfvenom -p <payload> -f raw
-```
-
-List available payloads:
+Generate payload:
 
 ```bash
-msfvenom --list payloads
+msfvenom -p <payload> -f raw
 ```
 
-Common payloads:
+List available payloads:
+
+```bash
+msfvenom --list payloads
+```
+
+Common payloads:
 
 ```text
 linux/x86/shell_reverse_tcp

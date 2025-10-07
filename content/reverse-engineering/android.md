@@ -14,15 +14,15 @@ toc: true
 
 ## Introduction
 
-Android applications are distributed as either **APK** (Android Package) or **AAB** (Android App Bundle) files.  
+Android applications are distributed as either **APK** (Android Package) or **AAB** (Android App Bundle) files.
 In CTF reverse engineering, analyzing these files can expose hardcoded keys, credential checks, or base64‑encoded secrets.
 
 ## Quick Reference
 
-- Decompile APK: `jadx -d output/ sample.apk`
-- Decode resources & smali: `apktool d sample.apk -o output/`
-- Build smali back to APK: `apktool b output/ -o rebuilt.apk`
-- Extract APKs from AAB:  
+- Decompile APK: `jadx -d output/ sample.apk`
+- Decode resources & smali: `apktool d sample.apk -o output/`
+- Build smali back to APK: `apktool b output/ -o rebuilt.apk`
+- Extract APKs from AAB:
 
 ```bash
 bundletool build-apks --bundle=app.aab --output=output.apks

@@ -26,8 +26,8 @@ This reveals otherwise inaccessible PHP source code when decoded.
 
 | Tool                                                                                      | Purpose                           |
 |-------------------------------------------------------------------------------------------|-----------------------------------|
-| [PHP Include to Shell Char Dict](https://github.com/wupco/PHP_INCLUDE_TO_SHELL_CHAR_DICT) | Generate payloads for LFI filters |
-| [BurpSuite Repeater](https://portswigger.net/burp)                                        | Test file paths interactively     |
+| [PHP Include to Shell Char Dict](https://github.com/wupco/PHP_INCLUDE_TO_SHELL_CHAR_DICT) | Generate payloads for LFI filters |
+| [BurpSuite Repeater](https://portswigger.net/burp)                                        | Test file paths interactively     |
 
 ## Tips
 

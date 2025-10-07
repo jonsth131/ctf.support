@@ -14,14 +14,14 @@ toc: true
 
 ## Introduction
 
-Windows **Prefetch** files (`.pf`) record information about executed applications for performance optimization.  
+Windows **Prefetch** files (`.pf`) record information about executed applications for performance optimization.
 They also provide **evidence of program execution**, even after binaries have been deleted.
 
 ## Tools
 
 | Tool                                                | Purpose                                             |
 |-----------------------------------------------------|-----------------------------------------------------|
-| [PECmd](https://ericzimmerman.github.io/#!index.md) | Parse Prefetch files and extract execution metadata |
+| [PECmd](https://ericzimmerman.github.io/#!index.md) | Parse Prefetch files and extract execution metadata |
 
 ## Location
 
@@ -29,15 +29,15 @@ They also provide **evidence of program execution**, even after binaries have be
 C:\Windows\Prefetch\
 ```
 
-Example files: `CMD.EXE‑A6294E76.pf`, `MIMIKATZ.EXE‑B29D8C74.pf`
+Example files: `CMD.EXE‑A6294E76.pf`, `MIMIKATZ.EXE‑B29D8C74.pf`
 
-## Key Fields
+## Key Fields
 
 | Field         | Description                           |
 |---------------|---------------------------------------|
-| Run Count     | Number of times the program executed  |
-| Last Run Time | Most recent execution timestamp (UTC) |
-| File List     | Files accessed by this executable     |
+| Run Count     | Number of times the program executed  |
+| Last Run Time | Most recent execution timestamp (UTC) |
+| File List     | Files accessed by this executable     |
 
 ## Example
 

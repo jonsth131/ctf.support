@@ -14,34 +14,34 @@ toc: false
 
 ## Introduction
 
-Asymmetric cryptography uses **two keys**, a **public key** for encryption and a **private key** for decryption.  
-This principle underpins secure communication, digital signatures, and many CTF crypto challenges.
+Asymmetric cryptography uses **two keys**, a **public key** for encryption and a **private key** for decryption.
+This principle underpins secure communication, digital signatures, and many CTF crypto challenges.
 
-Common implementations include:
+Common implementations include:
 
-- **RSA (Rivest–Shamir–Adleman):** uses large primes and modular arithmetic  
-- **ElGamal:** relies on the Discrete Logarithm Problem in modular groups  
+- **RSA (Rivest–Shamir–Adleman):** uses large primes and modular arithmetic
+- **ElGamal:** relies on the Discrete Logarithm Problem in modular groups
 
-CTF tasks may involve factoring RSA `n`, finding weak keys, recovering messages from partial information, or reversing ElGamal ciphertext with known parameters.
+CTF tasks may involve factoring RSA `n`, finding weak keys, recovering messages from partial information, or reversing ElGamal ciphertext with known parameters.
 
 ## RSA
 
-**RSA (Rivest - Shamir - Adleman)** is based on the mathematical difficulty of factoring the product of two large prime numbers `p` and `q`.
+**RSA (Rivest - Shamir - Adleman)** is based on the mathematical difficulty of factoring the product of two large prime numbers `p` and `q`.
 
-A public key consists of:
+A public key consists of:
 
-- `n = p × q` - the modulus
-- `e` - the public exponent
+- `n = p × q` - the modulus
+- `e` - the public exponent
 
-The private key uses:
+The private key uses:
 
-- `d = e⁻¹ mod φ(n)` where `φ(n) = (p‑1)(q‑1)`
+- `d = e⁻¹ mod φ(n)` where `φ(n) = (p‑1)(q‑1)`
 
-Encryption and decryption:
+Encryption and decryption:
 
 ```text
-c = m^e mod n
-m = c^d mod n
+c = m^e mod n
+m = c^d mod n
 ```
 
 ### Tools
@@ -53,7 +53,7 @@ m = c^d mod n
 | [Integer factorization calculator](https://www.alpertron.com.ar/ECM.HTM) | Quickly factor moderate‑sized RSA moduli.                              |
 | [RSA calculator](https://www.tausquared.net/pages/ctf/rsa.html)          | Key generation, encryption, decryption in browser.                     |
 
-### Example: Decrypting with Known p and q
+### Example: Decrypting with Known p and q
 
 ```python
 #!/usr/bin/env python3
@@ -77,33 +77,33 @@ if __name__ == "__main__":
 
 ## ElGamal
 
-ElGamal encryption is another asymmetric system based on the Discrete Logarithm Problem (DLP) in modular arithmetic.
+ElGamal encryption is another asymmetric system based on the Discrete Logarithm Problem (DLP) in modular arithmetic.
 
-It is often used in cryptographic schemes that require probabilistic encryption (randomization on each encryption).
+It is often used in cryptographic schemes that require probabilistic encryption (randomization on each encryption).
 
-Key elements:
+Key elements:
 
-- `p`: large prime number (defines group)
-- `g`: generator of the multiplicative group
-- `x`: private key (random)
-- `h = g^x mod p`: public key component
+- `p`: large prime number (defines group)
+- `g`: generator of the multiplicative group
+- `x`: private key (random)
+- `h = g^x mod p`: public key component
 
-Encryption of plaintext `m`:
+Encryption of plaintext `m`:
 
 ```text
 Choose random k.
-c1 = g^k mod p
-c2 = (m × h^k) mod p
-Ciphertext = (c1, c2)
+c1 = g^k mod p
+c2 = (m × h^k) mod p
+Ciphertext = (c1, c2)
 ```
 
 Decryption:
 
 ```text
-m = c2 × (c1^(p‑1‑x)) mod p
+m = c2 × (c1^(p‑1‑x)) mod p
 ```
 
-### Example Decryption Routine
+### Example Decryption Routine
 
 ```python
 def decrypt(c1, c2, x, p):
@@ -124,4 +124,4 @@ plaintext = decrypt(c1, c2, x, p)
 print(plaintext)
 ```
 
-When `p`, `g`, `h`, and either `x` (private key) or `k` (ephemeral key) are leaked, ElGamal encryption becomes breakable.
+When `p`, `g`, `h`, and either `x` (private key) or `k` (ephemeral key) are leaked, ElGamal encryption becomes breakable.

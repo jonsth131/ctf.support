@@ -39,10 +39,10 @@ In CTF reverse engineering challenges, this step often exposes authentication ro
 | [JADX](https://github.com/skylot/jadx)                                                       | Java / Android | Decompile Dex or APKs                    |
 | [Bytecode Viewer](https://www.bytecodeviewer.com/)                                           | Java / Android | Decompile Dex or APKs                    |
 | [JD‑GUI](https://java-decompiler.github.io/)                                                 | Java           | GUI viewer for `.class` / `.jar` source  |
-| [uncompyle6](https://github.com/rocky/python-uncompyle6)                                     | Python ≤ 3.8   | Decompile `.pyc` bytecode                |
-| [Decompyle++](https://github.com/zrax/pycdc)                                                 | Python ≥ 3.9   | Alternative modern Python decompiler     |
+| [uncompyle6](https://github.com/rocky/python-uncompyle6)                                     | Python ≤ 3.8   | Decompile `.pyc` bytecode                |
+| [Decompyle++](https://github.com/zrax/pycdc)                                                 | Python ≥ 3.9   | Alternative modern Python decompiler     |
 | [pyinstxtractor](https://github.com/extremecoders-re/pyinstxtractor)                         | Python EXE     | Decompile PyInstaller executables        |
-| [JPEXS Decompiler](https://github.com/jindrapetrik/jpexs-decompiler)                         | Flash          | Decompile `.swf` (ActionScript) files    |
+| [JPEXS Decompiler](https://github.com/jindrapetrik/jpexs-decompiler)                         | Flash          | Decompile `.swf` (ActionScript) files    |
 
 ## Tips
 

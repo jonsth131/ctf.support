@@ -14,9 +14,9 @@ toc: false
 
 ## Overview
 
-Cryptography challenges in CTFs involve encoding, encrypting, or hashing data.
+Cryptography challenges in CTFs involve encoding, encrypting, or hashing data.
 
-Your objective may be to identify an unknown cipher, factor a key, or recover plaintext through cryptanalysis.
+Your objective may be to identify an unknown cipher, factor a key, or recover plaintext through cryptanalysis.
 
 ---
 

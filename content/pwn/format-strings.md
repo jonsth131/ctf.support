@@ -14,11 +14,11 @@ toc: true
 
 ## Introduction
 
-Format string vulnerabilities allow an attacker to manipulate the format parameter of printing functions (`printf`, `fprintf`, etc.).
+Format string vulnerabilities allow an attacker to manipulate the format parameter of printing functions (`printf`, `fprintf`, etc.).
 
-By injecting custom specifiers, you can read stack values or write to memory (when `%n` is used).
+By injecting custom specifiers, you can read stack values or write to memory (when `%n` is used).
 
-## Common Specifiers
+## Common Specifiers
 
 | Specifier    | Description                       |
 |--------------|-----------------------------------|
@@ -26,11 +26,11 @@ By injecting custom specifiers, you can read stack values or�
 | `%p`         | Address of pointer to void void * |
 | `%x` or `%X` | Hexadecimal                       |
 
-## Stack Position Syntax
+## Stack Position Syntax
 
 ```text
-%1$p   # Dump first stack pointer
-%7$s   # Interpret 7th arg as C‑string
+%1$p   # Dump first stack pointer
+%7$s   # Interpret 7th arg as C‑string
 ```
 
-These are useful for information leaks and calculating offsets for writes.
+These are useful for information leaks and calculating offsets for writes.

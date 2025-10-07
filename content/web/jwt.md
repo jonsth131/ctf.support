@@ -14,14 +14,14 @@ toc: true
 
 ## Introduction
 
-**JSON Web Tokens (JWT)** are compact, self‑contained authentication tokens used by web applications.  
+**JSON Web Tokens (JWT)** are compact, self‑contained authentication tokens used by web applications.
 A typical token contains three Base64‑encoded parts:
 
 ```text
 header.payload.signature
 ```
 
-In CTFs, JWTs are frequently used for authentication puzzles where misconfiguration or weak signing keys allow you to forge or modify claims to become another user — often to escalate privileges or reveal a flag.
+In CTFs, JWTs are frequently used for authentication puzzles where misconfiguration or weak signing keys allow you to forge or modify claims to become another user — often to escalate privileges or reveal a flag.
 
 ---
 
@@ -52,9 +52,9 @@ In CTFs, JWTs are frequently used for authentication puzzles where misconfigurat
 
 | Part          | Description                                                 |
 |---------------|-------------------------------------------------------------|
-| **Header**    | Algorithm & token type (e.g. `{"alg":"HS256","typ":"JWT"}`) |
+| **Header**    | Algorithm & token type (e.g. `{"alg":"HS256","typ":"JWT"}`) |
 | **Payload**   | User data & claims (`{"user":"guest","role":"user"}`)       |
-| **Signature** | Verifies integrity (HMAC / RSA)                             |
+| **Signature** | Verifies integrity (HMAC / RSA)                             |
 
 Example token:
 
@@ -66,7 +66,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoic3R1ZGVudCIsInJvbGUiOiJ1c2VyIn0
 
 ## Exploitation Techniques
 
-### None Algorithm Vulnerability
+### None Algorithm Vulnerability
 
 If the server accepts `alg":"none"` without verifying a signature:
 
@@ -76,7 +76,7 @@ jwt_tool -X a <token>
 
 This strips the signature and adjusts the header.
 
-### Weak HMAC Secrets
+### Weak HMAC Secrets
 
 If the algorithm is **HS256** (shared secret) and the key is weak, try cracking:
 
@@ -84,7 +84,7 @@ If the algorithm is **HS256** (shared secret) and the key is weak, try cracking:
 jwt_tool --crack -d rockyou.txt <token>
 ```
 
-Or use Hashcat:
+Or use Hashcat:
 
 ```bash
 hashcat -m 16500 token.txt rockyou.txt
@@ -96,6 +96,6 @@ Once the key is discovered, sign a new token with elevated claims:
 jwt_tool -S -p <secret> -I -pc "role" -pv "admin" <token>
 ```
 
-### Algorithm Confusion (HS256 <> RS256)
+### Algorithm Confusion (HS256 <> RS256)
 
-If the server uses Asymmetric RSA but incorrectly trusts tokens signed via Symmetric HS256, replace the algorithm value and use the server’s public key as the secret to craft a valid HMAC.
+If the server uses Asymmetric RSA but incorrectly trusts tokens signed via Symmetric HS256, replace the algorithm value and use the server’s public key as the secret to craft a valid HMAC.

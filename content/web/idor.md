@@ -14,7 +14,7 @@ toc: true
 
 ## Introduction
 
-**IDOR** vulnerabilities occur when direct object references (like IDs) are exposed without proper authorization checks.  
+**IDOR** vulnerabilities occur when direct object references (like IDs) are exposed without proper authorization checks.
 These weaknesses often provide access to other users' data in CTF web challenges.
 
 ## Example
@@ -31,7 +31,7 @@ https://example.com/profile?id=456
 
 ## Tips
 
-- Enumerate sequential IDs and UUIDs.  
-- Look for exposed numeric parameters (`id`, `uid`, `order_id`).  
-- Combine with **authorization tokens** or cookies to confirm privilege checks.  
+- Enumerate sequential IDs and UUIDs.
+- Look for exposed numeric parameters (`id`, `uid`, `order_id`).
+- Combine with **authorization tokens** or cookies to confirm privilege checks.
 - Monitor API responses and status codes for unauthorized access hints.

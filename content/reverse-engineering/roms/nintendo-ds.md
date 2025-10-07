@@ -14,13 +14,13 @@ toc: true
 
 ## Introduction
 
-Nintendo DS games often package graphics, sound, and two ARM executables (ARM7 and ARM9).  
+Nintendo DS games often package graphics, sound, and two ARM executables (ARM7 and ARM9).
 By unpacking them, you can disassemble the logic or modify in-game text to retrieve hidden CTF flags.
 
 ## Quick Reference
 
 - Unpack ROM: `nds_unpacker.py game.nds`
-- Load `arm9.bin` in Ghidra -> Processor: ARM v5 -> Base: 0x02000000
+- Load `arm9.bin` in Ghidra -> Processor: ARM v5 -> Base: 0x02000000
 - Test execution in [DeSmuME](https://github.com/TASEmulators/desmume)
 
 ## Tools
@@ -33,6 +33,6 @@ By unpacking them, you can disassemble the logic or modify in-game text to retri
 
 ## Tips
 
-- Focus on the **ARM9** code, it usually holds logic and flag comparisons.  
-- Extract embedded assets like `.bin` or `.dat`, they may include hint text or images.  
+- Focus on the **ARM9** code, it usually holds logic and flag comparisons.
+- Extract embedded assets like `.bin` or `.dat`, they may include hint text or images.
 - Run inside **DeSmuME debugger** to inspect VRAM or register states.

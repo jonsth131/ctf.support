@@ -1,10 +1,10 @@
 ---
-title: "Miscellaneous Cryptography"
-description: "Assorted decoders, interpreters, and automation tools like Brainfuck and Ciphey for solving unconventional CTF crypto puzzles."
+title: "Miscellaneous Cryptography"
+description: "Assorted decoders, interpreters, and automation tools like Brainfuck and Ciphey for solving unconventional CTF crypto puzzles."
 categories: ["Cryptography"]
 tags: ["brainfuck", "ciphey", "automation", "esoteric"]
 authors: ["CTF.Support Team"]
-summary: "Esoteric languages and automation utilities for special crypto cases."
+summary: "Esoteric languages and automation utilities for special crypto cases."
 aliases: ["/crypto/misc/"]
 slug: "misc"
 toc: true
@@ -12,8 +12,8 @@ toc: true
 
 ## Introduction
 
-Not every cryptography challenge fits neatly into a single category like RSA, ElGamal, or classical ciphers.  
-**Miscellaneous cryptography** covers the tools, scripts, and exotic encodings used for *unconventional* or *hybrid* crypto problems often seen in CTFs.
+Not every cryptography challenge fits neatly into a single category like RSA, ElGamal, or classical ciphers.
+**Miscellaneous cryptography** covers the tools, scripts, and exotic encodings used for *unconventional* or *hybrid* crypto problems often seen in CTFs.
 
 These challenges usually combine multiple layers, for example, a Base64‑encoded Brainfuck script hiding a Caesar‑ciphered flag, or require automated guessing tools to identify the correct decoding sequence.
 

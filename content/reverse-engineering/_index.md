@@ -14,8 +14,8 @@ toc: false
 
 ## Introduction
 
-Reverse Engineering (RE) is the process of analyzing compiled executables or binaries to understand their inner logic, recover data, or find hidden functionality.  
-In CTF challenges, RE allows you to recover passwords, keys, or validation routines from compiled programs.  
+Reverse Engineering (RE) is the process of analyzing compiled executables or binaries to understand their inner logic, recover data, or find hidden functionality.
+In CTF challenges, RE allows you to recover passwords, keys, or validation routines from compiled programs.
 
 Common RE tasks include:
 

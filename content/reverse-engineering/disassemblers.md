@@ -14,8 +14,8 @@ toc: true
 
 ## Introduction
 
-Disassemblers transform compiled binaries into their corresponding assembly instructions.  
-They are essential in reverse engineering to read the underlying logic, even when source code or symbols are missing.  
+Disassemblers transform compiled binaries into their corresponding assembly instructions.
+They are essential in reverse engineering to read the underlying logic, even when source code or symbols are missing.
 
 In CTF challenges, examining assembly helps identify encryption loops, password checks, and hidden key comparisons.
 
@@ -29,15 +29,15 @@ In CTF challenges, examining assembly helps identify encryption loops, password 
 | Tool                                       | Platform       | Purpose                                                      |
 |--------------------------------------------|----------------|--------------------------------------------------------------|
 | [Ghidra](https://ghidra-sre.org/)          | Cross‑platform | Comprehensive RE suite for static analysis and decompilation |
-| [IDA Free](https://hex-rays.com/ida-free/) | Cross‑platform | Disassembler with decompiler                                 |
-| [Binary Ninja](https://binary.ninja/)      | Cross‑platform | Modern, scriptable binary analysis environment               |
-| [Cutter](https://cutter.re/)               | Cross‑platform | GUI frontend for Radare2, open‑source alternative            |
+| [IDA Free](https://hex-rays.com/ida-free/) | Cross‑platform | Disassembler with decompiler                                 |
+| [Binary Ninja](https://binary.ninja/)      | Cross‑platform | Modern, scriptable binary analysis environment               |
+| [Cutter](https://cutter.re/)               | Cross‑platform | GUI frontend for Radare2, open‑source alternative            |
 | `objdump`                                  | Linux          | Command‑line disassembler for ELF binaries                   |
 
 ## Tips
 
-- Enable function auto‑analysis in Ghidra before browsing disassembly to recover call graphs automatically.  
-- Cross‑reference functions (XREFs) to find where flag checks are called.  
-- IDA and Ghidra can generate pseudocode (“decompile” mode) for faster comprehension.  
-- Cutter integrates Radare2 backends, combining manual patching with visualization.  
+- Enable function auto‑analysis in Ghidra before browsing disassembly to recover call graphs automatically.
+- Cross‑reference functions (XREFs) to find where flag checks are called.
+- IDA and Ghidra can generate pseudocode (“decompile” mode) for faster comprehension.
+- Cutter integrates Radare2 backends, combining manual patching with visualization.
 - For quick checks in CLI‑only environments, `objdump` is reliable and portable.

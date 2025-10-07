@@ -14,7 +14,7 @@ toc: true
 
 ## Introduction
 
-Unity is one of the most frequently used game engines in CTF reverse engineering challenges.  
+Unity is one of the most frequently used game engines in CTF reverse engineering challenges.
 Flags or credentials often appear in embedded scripts, asset bundles, or metadata resources.
 
 ## Quick Reference
@@ -28,17 +28,17 @@ Flags or credentials often appear in embedded scripts, asset bundles, or metadat
 
 | Tool                                                                  | Purpose                                                 |
 |-----------------------------------------------------------------------|---------------------------------------------------------|
-| [IL2CPP Dumper](https://github.com/Perfare/Il2CppDumper)              | Extracts symbols and metadata from IL2CPP binaries      |
+| [IL2CPP Dumper](https://github.com/Perfare/Il2CppDumper)              | Extracts symbols and metadata from IL2CPP binaries      |
 | [Cpp2IL](https://github.com/SamboyCoding/Cpp2IL)                      | Recreates readable C# from compiled C++ code            |
 | [AssetRipper](https://github.com/AssetRipper/AssetRipper)             | Extracts Unity assets/resources from projects or builds |
-| [Unity Assets Bundle Extractor](https://github.com/SeriousCache/UABE) | Legacy asset editor for Unity bundles                   |
+| [Unity Assets Bundle Extractor](https://github.com/SeriousCache/UABE) | Legacy asset editor for Unity bundles                   |
 | [MelonLoader](https://melonloader.co/)                                | Loads plugins for runtime inspection                    |
 | [BepInEx](https://github.com/BepInEx/BepInEx)                         | Plugin injector and modding framework                   |
 | [UnityExplorer](https://github.com/sinai-dev/UnityExplorer)           | Runtime object explorer for managed Unity assemblies    |
 
 ## Tips
 
-- Mono games are easily decompiled — check `Managed/Assembly-CSharp.dll`.  
-- IL2CPP games separate metadata (`global-metadata.dat`) and binary logic (`GameAssembly.dll`).  
-- Extraction tools can reveal text assets or JSON configs containing hints for flag validation.  
+- Mono games are easily decompiled — check `Managed/Assembly-CSharp.dll`.
+- IL2CPP games separate metadata (`global-metadata.dat`) and binary logic (`GameAssembly.dll`).
+- Extraction tools can reveal text assets or JSON configs containing hints for flag validation.
 - Plugin loaders like **BepInEx** or **MelonLoader** allow executing your own C# scripts inside the running game.

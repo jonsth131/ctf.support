@@ -14,7 +14,7 @@ toc: false
 
 ## Introduction
 
-**Local File Inclusion (LFI)** occurs when a web application dynamically loads files based on unsanitized user input.  
+**Local File Inclusion (LFI)** occurs when a web application dynamically loads files based on unsanitized user input.
 Attackers can exploit this to read system files, configuration data, user credentials, or even gain code execution with PHP filters or log injection.
 
 Example vulnerable endpoint:

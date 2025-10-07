@@ -14,7 +14,7 @@ toc: false
 
 ## Overview
 
-Binary exploitation (or pwn) challenges test how well you understand and manipulate compiled programs to gain code execution, read memory, or escalate privileges.
+Binary exploitation (or pwn) challenges test how well you understand and manipulate compiled programs to gain code execution, read memory, or escalate privileges.
 
 ---
 

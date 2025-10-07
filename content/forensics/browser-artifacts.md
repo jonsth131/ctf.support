@@ -46,11 +46,11 @@ Typical profile paths:
 
 Key files to look for:
 
-- `logins.json` - encrypted saved credentials  
-- `key4.db` / `key3.db` - encryption keys for saved credentials  
-- `places.sqlite` - history & bookmarks  
-- `cookies.sqlite` - cookies  
-- `formhistory.sqlite` - saved form entries  
+- `logins.json` - encrypted saved credentials
+- `key4.db` / `key3.db` - encryption keys for saved credentials
+- `places.sqlite` - history & bookmarks
+- `cookies.sqlite` - cookies
+- `formhistory.sqlite` - saved form entries
 - `sessionstore.jsonlz4` - session restore data (open tabs/windows)
 
 ### Extracting Saved Passwords

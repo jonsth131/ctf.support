@@ -14,7 +14,7 @@ toc: true
 
 ## Introduction
 
-GraphQL APIs expose structured query endpoints that return data through flexible requests.  
+GraphQL APIs expose structured query endpoints that return data through flexible requests.
 If introspection is enabled, full schema and field enumeration becomes possible, a common web CTF vector.
 
 ## Quick Reference
@@ -33,5 +33,5 @@ If introspection is enabled, full schema and field enumeration becomes possible,
 
 ## Tips
 
-- Try POSTing `{"query":"{__schema{types{name}}}"}`, success means introspection is ON.  
-- IDs and filters often leak internal logic (e.g., `isAdmin`, `flag`).  
+- Try POSTing `{"query":"{__schema{types{name}}}"}`, success means introspection is ON.
+- IDs and filters often leak internal logic (e.g., `isAdmin`, `flag`).

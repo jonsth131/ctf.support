@@ -21,7 +21,7 @@ resources:
 
 ## Introduction
 
-In reverse engineering challenges, understanding assembly is essential to analyze compiled executables and recover program behavior.  
+In reverse engineering challenges, understanding assembly is essential to analyze compiled executables and recover program behavior.
 By viewing compiler output from short snippets, you can quickly learn how code constructs translate into CPU instructions, an important skill in static analysis and binary reversing.
 
 ## Quick Reference
@@ -40,7 +40,7 @@ By viewing compiler output from short snippets, you can quickly learn how code c
 
 ## Using Compiler Explorer
 
-Open [Compiler Explorer](https://godbolt.org).  
+Open [Compiler Explorer](https://godbolt.org).
 Enter the following sample code:
 
 ```cpp

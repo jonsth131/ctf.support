@@ -24,21 +24,21 @@ resources:
 
 ## Introduction
 
-**Symbol ciphers** use shapes, pictograms, or visual alphabets instead of traditional letters or numbers.  
-They appear in cryptography CTF challenges that use fictional, historical, or stylized writing systems.
+**Symbol ciphers** use shapes, pictograms, or visual alphabets instead of traditional letters or numbers.
+They appear in cryptography CTF challenges that use fictional, historical, or stylized writing systems.
 
-These ciphers rely on **substitution**, each symbol or drawing corresponds to a letter, digit, or word.  
+These ciphers rely on **substitution**, each symbol or drawing corresponds to a letter, digit, or word.
 Once you identify the alphabet or symbol set, decoding becomes a simple matter of substitution.
 
 Examples of symbol systems include:
 
-- Historical scripts like **Pigpen**, **Theban**, **Ogham**, or **Cistercian numerals**  
-- Modern fantasy languages such as **Aurebesh**, **Hylian**, or **Daedric**  
-- Puzzle and pop‑culture alphabets (e.g., **Gravity Falls**, **Zodiac Killer**, **Ancients from Stargate**)
+- Historical scripts like **Pigpen**, **Theban**, **Ogham**, or **Cistercian numerals**
+- Modern fantasy languages such as **Aurebesh**, **Hylian**, or **Daedric**
+- Puzzle and pop‑culture alphabets (e.g., **Gravity Falls**, **Zodiac Killer**, **Ancients from Stargate**)
 
-Some challenges may even combine multiple systems, for instance, symbols within a grid (*Dancing Men* style) or color combinations like **Hexahue**.  
+Some challenges may even combine multiple systems, for instance, symbols within a grid (*Dancing Men* style) or color combinations like **Hexahue**.
 
-The goal in this section is to **identify the symbol set** and then translate it into readable text using lookup charts or visual decoders such as [dCode.fr](https://www.dcode.fr/symbols-ciphers).  
+The goal in this section is to **identify the symbol set** and then translate it into readable text using lookup charts or visual decoders such as [dCode.fr](https://www.dcode.fr/symbols-ciphers).
 
 ## Bill's symbol substitution
 

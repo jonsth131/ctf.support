@@ -15,7 +15,7 @@ toc: true
 
 ## Introduction
 
-The Python `pickle` module serializes and deserializes objects.  
+The Python `pickle` module serializes and deserializes objects.
 When loading user-supplied pickle data, arbitrary code execution can occur.
 
 ## Example Payload

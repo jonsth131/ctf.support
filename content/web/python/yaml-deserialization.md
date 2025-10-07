@@ -15,8 +15,8 @@ toc: true
 
 ## Introduction
 
-**YAML deserialization vulnerabilities** occur when a Python application uses `yaml.load()` insecurely on untrusted input.  
-The `PyYAML` module can instantiate arbitrary Python objects leading to **remote code execution** (RCE).  
+**YAML deserialization vulnerabilities** occur when a Python application uses `yaml.load()` insecurely on untrusted input.
+The `PyYAML` module can instantiate arbitrary Python objects leading to **remote code execution** (RCE).
 In web CTFs, YAML files or request payloads often hide this weakness.
 
 ---

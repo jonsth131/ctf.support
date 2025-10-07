@@ -14,7 +14,7 @@ toc: true
 
 ## Introduction
 
-The Atari 2600 uses MOS 6502 assembly and small (< 8 KB) ROMs.
+The Atari 2600 uses MOS 6502 assembly and small (< 8 KB) ROMs.
 Despite their simplicity, these programs can hide messages or encodings in data tables or graphics patterns.
 
 ## Quick Reference
@@ -34,5 +34,5 @@ distella rom.bin > rom.asm
 ## Tips
 
 - Flag strings may appear in tile maps or sprite data rather than text.
-- Read output .asm from DiStella to trace branch instructions and function flows.
-- Modify compiled byte patterns and reload in Stella to analyze runtime behavior.
+- Read output .asm from DiStella to trace branch instructions and function flows.
+- Modify compiled byte patterns and reload in Stella to analyze runtime behavior.

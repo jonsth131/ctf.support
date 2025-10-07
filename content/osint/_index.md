@@ -55,9 +55,9 @@ Tools:
 
 Approach:
 
-1. **Identify language or signage**: note writing systems, road markings, and symbols.  
-2. **Analyze environmental features**: terrain, flora, weather, and vehicles.  
-3. **Verify coordinates**: use map matching on Google Earth or Street View.  
+1. **Identify language or signage**: note writing systems, road markings, and symbols.
+2. **Analyze environmental features**: terrain, flora, weather, and vehicles.
+3. **Verify coordinates**: use map matching on Google Earth or Street View.
 4. **Confirm accuracy**: align shadows using SunCalc or landmark geometry.
 
 ## Images

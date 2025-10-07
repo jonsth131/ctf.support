@@ -14,24 +14,24 @@ toc: true
 
 ## Introduction
 
-Bootloaders are the first code executed during system startup, responsible for loading an OS or initializing firmware.  
+Bootloaders are the first code executed during system startup, responsible for loading an OS or initializing firmware.
 In low-level reversing or CTF tasks, bootloaders may contain custom routines, hidden data, or password checks embedded in assembly.
 
 ## Quick Reference
 
-- Run a bootloader in QEMU:  
+- Run a bootloader in QEMU:
 
 ```bash
 qemu-system-i386 -drive file=bootloader.bin,format=raw
 ```
 
-- Launch QEMU for debugging:
+- Launch QEMU for debugging:
 
 ```bash
 qemu-system-i386 -drive file=bootloader.bin,format=raw -s -S
 ```
 
-- Attach GDB to debug session:
+- Attach GDB to debug session:
 
 ```bash
 gdb
