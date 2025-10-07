@@ -28,3 +28,47 @@ Use [SigidWiki](https://www.sigidwiki.com/wiki/Signal_Identification_Guide) to i
 | [dtmf-decoder](https://github.com/ribt/dtmf-decoder)                                       | Python CLI application for DTMF tone decoding.                         |
 | [Detect DTMF Tones](http://dialabc.com/sound/detect/index.html)                            | Online DTMF audio decoder.                                             |
 | [Morse Decoder](https://morsecode.world/international/decoder/audio-decoder-adaptive.html) | Web-based Morse audio decoder.                                         |
+| [minimodem](https://www.whence.com/minimodem/)                                             | CLI tool to demodulate FSK modem signals (300–9600 baud) from audio.   |
+
+## Modem Signals
+
+Sound files that resemble old dial‑up or data‑transfer tones may actually contain **modem transmissions**, often encoded at 300 or 1200 baud.  
+These can be decoded directly with [`minimodem`](https://www.whence.com/minimodem/).
+
+```bash
+minimodem --rx 1200 -f transmissions.wav
+```
+
+Sample output:
+
+```text
+### CARRIER 1200 @ 1200.0 Hz ###
+Greetings, Professor Falken.
+
+Would you like to play a game?
+
+flag{f28d133e7174c412c1e39b4a84158fa3}
+
+Thanks for playing the Huntress CTF!
+
+        @
+       @@
+       @@@@
+  @@@@  @@@@@@  @@ @@@@@@@@
+   @@@@@@ @@@@@@@   @  @  @@@@
+     @@@@@@@@@@@@@@ @@@ @@   @@@
+ @@@@@@# @@@@@@@@@@@ @@@@@@@@  @@@
+  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ @@@
+  @@         @@@@@@@@@@@@@@@     @@
+  @@@@@@@@@@@@/@@@@@@@@@     @(~ @@
+  @@    @@@@@@@@@@@ @@@@ @@@@  @@@
+  @@@ @@@@.@@@@@@@@ @@@@@ @@@@  @@
+   @@@  @@@*%@@@@ @@@ @@@@ @@@@@
+     @@@    @   @@@@@@@@@ @@@@@
+       @@@@.     @@@@@@@@ @@@@
+           @@@@@@@@@ @@@@@ @@
+                        @@
+                         @ -dk
+
+### NOCARRIER ndata=663 confidence=4.773 ampl=1.001 bps=1200.00 (rate perfect) ###
+```
