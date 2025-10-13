@@ -28,22 +28,23 @@ In CTF reverse engineering challenges, this step often exposes authentication ro
 
 ## Tools
 
-| Tool                                                                                         | Platform       | Purpose                                  |
-|----------------------------------------------------------------------------------------------|----------------|------------------------------------------|
-| [ILSpy](https://github.com/icsharpcode/ILSpy)                                                | .NET           | Decompile assemblies and view C#/IL code |
-| [ilspy-vscode](https://marketplace.visualstudio.com/items?itemName=icsharpcode.ilspy-vscode) | .NET           | Decompile .NET assemblies in VS Code     |
-| [AvaloniaILSpy](https://github.com/icsharpcode/AvaloniaILSpy)                                | .NET           | Avalonia fork of ILSpy                   |
-| [dnSpy](https://github.com/dnSpy/dnSpy)                                                      | .NET           | .NET debugger and decompiler             |
-| [dnSpyEx](https://github.com/dnSpyEx/dnSpy)                                                  | .NET           | Advanced .NET debugger and decompiler    |
-| [dotPeek](https://www.jetbrains.com/decompiler/)                                             | .NET           | .NET decompiler from JetBrains           |
-| [JADX](https://github.com/skylot/jadx)                                                       | Java / Android | Decompile Dex or APKs                    |
-| [Bytecode Viewer](https://www.bytecodeviewer.com/)                                           | Java / Android | Decompile Dex or APKs                    |
-| [JD‑GUI](https://java-decompiler.github.io/)                                                 | Java           | GUI viewer for `.class` / `.jar` source  |
-| [uncompyle6](https://github.com/rocky/python-uncompyle6)                                     | Python ≤ 3.8   | Decompile `.pyc` bytecode                |
-| [Decompyle++](https://github.com/zrax/pycdc)                                                 | Python ≥ 3.9   | Alternative modern Python decompiler     |
-| [pyinstxtractor](https://github.com/extremecoders-re/pyinstxtractor)                         | Python EXE     | Decompile PyInstaller executables        |
-| [pycdc](https://github.com/zrax/pycdc)                                                       | Python         | C++ Decompiler for Python 2.x and 3.x    |
-| [JPEXS Decompiler](https://github.com/jindrapetrik/jpexs-decompiler)                         | Flash          | Decompile `.swf` (ActionScript) files    |
+| Tool                                                                                             | Platform       | Purpose                                          |
+|--------------------------------------------------------------------------------------------------|----------------|--------------------------------------------------|
+| [ILSpy](https://github.com/icsharpcode/ILSpy)                                                    | .NET           | Decompile assemblies and view C#/IL code         |
+| [ilspy-vscode](https://marketplace.visualstudio.com/items?itemName=icsharpcode.ilspy-vscode)     | .NET           | Decompile .NET assemblies in VS Code             |
+| [AvaloniaILSpy](https://github.com/icsharpcode/AvaloniaILSpy)                                    | .NET           | Avalonia fork of ILSpy                           |
+| [dnSpy](https://github.com/dnSpy/dnSpy)                                                          | .NET           | .NET debugger and decompiler                     |
+| [dnSpyEx](https://github.com/dnSpyEx/dnSpy)                                                      | .NET           | Advanced .NET debugger and decompiler            |
+| [dotPeek](https://www.jetbrains.com/decompiler/)                                                 | .NET           | .NET decompiler from JetBrains                   |
+| [JADX](https://github.com/skylot/jadx)                                                           | Java / Android | Decompile Dex or APKs                            |
+| [Bytecode Viewer](https://www.bytecodeviewer.com/)                                               | Java / Android | Decompile Dex or APKs                            |
+| [JD‑GUI](https://java-decompiler.github.io/)                                                     | Java           | GUI viewer for `.class` / `.jar` source          |
+| [uncompyle6](https://github.com/rocky/python-uncompyle6)                                         | Python ≤ 3.8   | Decompile `.pyc` bytecode                        |
+| [Decompyle++](https://github.com/zrax/pycdc)                                                     | Python ≥ 3.9   | Alternative modern Python decompiler             |
+| [pyinstxtractor](https://github.com/extremecoders-re/pyinstxtractor)                             | Python EXE     | Decompile PyInstaller executables                |
+| [pycdc](https://github.com/zrax/pycdc)                                                           | Python         | C++ Decompiler for Python 2.x and 3.x            |
+| [JPEXS Decompiler](https://github.com/jindrapetrik/jpexs-decompiler)                             | Flash          | Decompile `.swf` (ActionScript) files            |
+| [AutoIt v3.2.4.9](https://www.autoitscript.com/autoit3/files/archive/autoit/autoit-v3.2.4.9.zip) | AutoIt Scripts | Analyze or decompile AutoIt-compiled executables |
 
 ## Tips
 
