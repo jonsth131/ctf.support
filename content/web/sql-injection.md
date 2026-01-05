@@ -26,6 +26,13 @@ In CTFs, this often exposes login bypasses or flag tables within databases.
 | Identify columns via error-based strategy | `' ORDER BY 5 --`                                                |
 | Dump table contents                       | `' UNION SELECT column1, column2 FROM users --`                  |
 
+## Resources
+
+| Resource                                                                                               | Description                                |
+|--------------------------------------------------------------------------------------------------------|--------------------------------------------|
+| [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection) | Comprehensive SQLi payloads and techniques |
+| [HackTricks](https://book.hacktricks.wiki/en/pentesting-web/sql-injection/index.html)                  | In-depth SQLi exploitation methods         |
+
 ## Example
 
 ### Vulnerable Code (Python)

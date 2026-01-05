@@ -17,6 +17,13 @@ toc: true
 SSRF allows an attacker to force a vulnerable server to perform HTTP requests to internal resources or remote endpoints.
 This can bypass firewalls, access metadata, or exfiltrate secrets.
 
+## Resources
+
+| Resource                                                                                                                 | Description                                       |
+|--------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
+| [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Request%20Forgery) | Comprehensive SSRF payloads, tools and techniques |
+| [HackTricks](https://book.hacktricks.wiki/en/pentesting-web/ssrf-server-side-request-forgery/index.html)                 | In-depth SSRF exploitation methods                |
+
 ## Example (Python)
 
 ```python
