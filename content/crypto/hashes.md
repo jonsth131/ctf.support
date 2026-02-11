@@ -1,5 +1,6 @@
 ---
 title: "Hashes"
+date: 2026-02-11
 description: "Learn to identify, crack, and verify hashes such as MD5, SHA‑1, and SHA‑256 using online and offline tools."
 categories: ["Cryptography"]
 tags: ["hashes", "md5", "sha1", "hashcat", "john", "crackstation"]
@@ -27,14 +28,15 @@ Typical goals in a hash challenge:
 - Lookup or crack the hash value
 - Verify the output against flag patterns or password formats
 
-## Tools
+## Tools & Resources
 
-| Tool                                     | Purpose                |
-|------------------------------------------|------------------------|
-| `John the Ripper` / `hashcat`            | Hash cracking tools.   |
-| [CrackStation](https://crackstation.net) | Look up hashes online. |
+| Tool                                              | Purpose                |
+|---------------------------------------------------|------------------------|
+| [John the Ripper](https://www.openwall.com/john/) | Hash cracking tool.    |
+| [Hashcat](https://hashcat.net/hashcat/)           | Hash cracking tool.    |
+| [CrackStation](https://crackstation.net)          | Look up hashes online. |
 
-## Example
+## Cracking Hashes
 
 ```bash
 # Using John the Ripper

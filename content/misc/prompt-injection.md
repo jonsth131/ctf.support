@@ -1,5 +1,6 @@
 ---
 title: "Prompt Injection"
+date: 2026-02-11
 description: "Learn how prompt injection attacks work in AI models and how they appear in CTF or security training challenges."
 categories: ["Misc"]
 tags: ["prompt injection", "ai", "llm", "security", "ctf"]

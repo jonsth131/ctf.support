@@ -14,7 +14,7 @@ toc: true
 
 ## Introduction
 
-SQL Injection (SQLi) occurs when user input is improperly concatenated into a SQL query, allowing direct control over its execution.
+**SQL Injection (SQLi)** occurs when user input is improperly concatenated into a SQL query, allowing direct control over its execution.
 In CTFs, this often exposes login bypasses or flag tables within databases.
 
 ## Quick Reference
