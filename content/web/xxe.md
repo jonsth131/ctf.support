@@ -17,6 +17,13 @@ toc: true
 An **XXE (XML External Entity)** vulnerability arises when a server-side XML parser processes external entities.
 Attackers can read local files or cause SSRF requests from the target server.
 
+## Tools & Resources
+
+| Resource                                                                                               | Description                               |
+|--------------------------------------------------------------------------------------------------------|-------------------------------------------|
+| [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection) | Comprehensive XXE payloads and techniques |
+| [HackTricks](https://book.hacktricks.wiki/en/pentesting-web/xxe-xee-xml-external-entity.html)          | In-depth XXE exploitation methods         |
+
 ## Detection Payload
 
 ```xml
