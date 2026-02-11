@@ -30,11 +30,14 @@ Typical goals in a hash challenge:
 
 ## Tools & Resources
 
-| Tool                                              | Purpose                |
-|---------------------------------------------------|------------------------|
-| [John the Ripper](https://www.openwall.com/john/) | Hash cracking tool.    |
-| [Hashcat](https://hashcat.net/hashcat/)           | Hash cracking tool.    |
-| [CrackStation](https://crackstation.net)          | Look up hashes online. |
+| Tool                                                   | Purpose                       |
+|--------------------------------------------------------|-------------------------------|
+| [John the Ripper](https://www.openwall.com/john/)      | Hash cracking tool.           |
+| [Hashcat](https://hashcat.net/hashcat/)                | Hash cracking tool.           |
+| [hashpump](https://github.com/miekrr/HashPump)         | Length extension attack tool. |
+| [CrackStation](https://crackstation.net)               | Look up hashes online.        |
+| [rockyou.txt](https://github.com/zacheller/rockyou)    | Common password list.         |
+| [SecLists](https://github.com/danielmiessler/SecLists) | Comprehensive wordlists.      |
 
 ## Cracking Hashes
 
