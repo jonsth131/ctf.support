@@ -110,9 +110,9 @@ curl "http://target/ping?host=8.8.8.8;cat%20/flag.txt"
 Use this format:
 
 ```markdown
-| Tool             | Description                          |
-|------------------|--------------------------------------|
-| [Tool Name](url) | One-line description of what it does |
+| Tool / Resource           | Description                          |
+|---------------------------|--------------------------------------|
+| [Tool/Resource Name](url) | One-line description of what it does |
 ```
 
 #### Command Reference Tables
