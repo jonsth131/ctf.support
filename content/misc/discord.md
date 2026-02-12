@@ -19,7 +19,13 @@ Links and files from Discord can reveal useful data even if the invite or messag
 
 This page covers how to interpret **Discord links**, and work with **snowflake IDs**.
 
----
+## Tools & Resources
+
+| Tool / Resource                                                                    | Description                                            |
+|------------------------------------------------------------------------------------|--------------------------------------------------------|
+| [Snowstamp](https://snowsta.mp/)                                                   | Web tool to decode Discord snowflake IDs to timestamps |
+| [Discord ID](https://discord.id/)                                                  | Extract creation dates from any Discord ID             |
+| [Discord Developer Docs](https://discord.com/developers/docs/reference#snowflakes) | Official snowflake format documentation                |
 
 ## Discord Links and Structure
 
@@ -36,13 +42,3 @@ These IDs encode both a timestamp and unique object ID bits.
 | **Invite Link**      | `https://discord.gg/<invite_code>`                                  |
 
 An invalid or expired link may still leak IDs that can be decoded to determine when the guild/channel/message was created.
-
----
-
-## Understanding Discord Snowflakes
-
-**Snowflakes** are unique id's containing a timestamp.
-
-Useful tools:
-
-- [Snowstamp](https://snowsta.mp/)
